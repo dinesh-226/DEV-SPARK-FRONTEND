@@ -1,0 +1,322 @@
+/* ==========================================================================
+   DEVSPARK 2026 — PREMIUM GREEN & WHITE THEME
+   Palette: Crisp White (#FFFFFF), Fresh Mint Canvas (#F4F8F6), Emerald Green (#059669 / #10B981)
+   ========================================================================== */
+
+:root {
+  /* Geometric Sans-Serif Typography */
+  --font-heading: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Fresh Green & White Canvas */
+  --bg-dark: #f4f8f6;
+  --bg-darker: #e8f2ed;
+  --bg-card: #ffffff;
+  --bg-card-hover: #ffffff;
+  --bg-card-subtle: #edf6f1;
+
+  /* Green Brand Palette */
+  --green-primary: #059669;
+  --green-hover: #047857;
+  --green-bright: #10b981;
+  --green-light: #ecfdf5;
+  --green-mint: #d1fae5;
+  --green-dark: #064e3b;
+
+  /* Primary Accent */
+  --primary: #059669;
+  --primary-hover: #047857;
+  --primary-glow: rgba(5, 150, 105, 0.28);
+  --primary-subtle: rgba(5, 150, 105, 0.08);
+
+  /* Emerald Gradient */
+  --green-gradient: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+  --green-text-gradient: linear-gradient(90deg, #047857 0%, #059669 40%, #10b981 100%);
+
+  /* Typography Colors */
+  --text-pure: #111827;
+  --text-heading: #0f2e22;
+  --text-muted: #4b5563;
+  --text-dim: #6b7280;
+
+  /* Borders */
+  --border-subtle: rgba(5, 150, 105, 0.12);
+  --border-medium: rgba(5, 150, 105, 0.22);
+  --border-green: rgba(5, 150, 105, 0.45);
+
+  /* Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 20px rgba(6, 78, 59, 0.06), 0 1px 3px rgba(6, 78, 59, 0.03);
+  --shadow-btn: 0 4px 16px rgba(5, 150, 105, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body.dribbble-theme {
+  background-color: var(--bg-dark);
+  color: var(--text-pure);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Green Text Gradient */
+.google-gradient-text, .green-gradient-text {
+  background: var(--green-text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* Tagline */
+.crimson-tagline, .google-tagline, .green-tagline {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+/* Green Theme Buttons */
+.btn-dribbble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.85rem;
+  border-radius: var(--radius-xs);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-family: var(--font-body);
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.btn-dribbble-primary {
+  background: var(--green-primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-btn);
+}
+
+.btn-dribbble-primary:hover {
+  background: var(--green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(5, 150, 105, 0.45);
+}
+
+.btn-dribbble-secondary {
+  background: #ffffff;
+  border: 1px solid var(--border-medium);
+  color: var(--green-primary);
+}
+
+.btn-dribbble-secondary:hover {
+  border-color: var(--green-primary);
+  background: var(--green-light);
+}
+
+/* Clean White Cards */
+.dribbble-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: all 0.25s ease;
+  position: relative;
+  box-shadow: var(--shadow-card);
+}
+
+.dribbble-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(5, 150, 105, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(6, 78, 59, 0.1);
+}
+
+/* Green Pill Tags */
+.crimson-pill, .google-pill, .green-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-xs);
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  background: var(--green-light);
+  color: var(--green-primary);
+  border: 1px solid rgba(5, 150, 105, 0.25);
+}
+
+.google-pill-red {
+  background: var(--green-light);
+  color: var(--green-primary);
+  border: 1px solid rgba(5, 150, 105, 0.25);
+}
+
+.google-pill-yellow {
+  background: var(--green-light);
+  color: var(--green-primary);
+  border: 1px solid rgba(5, 150, 105, 0.25);
+}
+
+.google-pill-green {
+  background: var(--green-light);
+  color: var(--green-primary);
+  border: 1px solid rgba(5, 150, 105, 0.25);
+}
+
+/* Nav Link */
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.5rem 0.2rem;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--green-primary);
+}
+
+.nav-link.active {
+  color: var(--green-primary);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: var(--green-primary);
+  border-radius: 2px;
+}
+
+/* Form Inputs */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.45rem;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xs);
+  padding: 0.85rem 1.15rem;
+  color: var(--text-pure);
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--green-primary);
+  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.2);
+}
+
+.form-input::placeholder, .form-textarea::placeholder {
+  color: var(--text-dim);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(5, 150, 105, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green-primary);
+}
+
+/* Modal Overlay */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 40, 30, 0.55);
+  backdrop-filter: blur(12px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: dribbbleModalFade 0.2s ease;
+}
+
+@keyframes dribbbleModalFade {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+}
