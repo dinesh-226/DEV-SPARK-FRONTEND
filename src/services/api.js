@@ -1,4 +1,15 @@
-const API_BASE = '/api';
+// Determine API base URL dynamically for local dev and live Vercel production
+const getApiBase = () => {
+  if (import.meta.env.VITE_API_BASE_URL) {
+    return import.meta.env.VITE_API_BASE_URL.replace(/\/$/, '');
+  }
+  if (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    return 'https://dev-spark-backend.vercel.app/api';
+  }
+  return '/api';
+};
+
+const API_BASE = getApiBase();
 
 export const registerTeamAPI = async (teamData) => {
   try {
