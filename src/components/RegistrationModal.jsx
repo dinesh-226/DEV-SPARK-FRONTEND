@@ -459,6 +459,19 @@ export const RegistrationModal = ({ isOpen, onClose, onRegistrationSuccess }) =>
                           ))}
                         </select>
                       </div>
+                      <div>
+                        <label className="form-label">Year *</label>
+                        <select
+                          value={m.academicYear || '3rd Year'}
+                          onChange={(e) => handleMemberChange(idx, 'academicYear', e.target.value)}
+                          className="form-select"
+                          style={{ padding: '0.65rem 0.85rem' }}
+                        >
+                          {ACADEMIC_YEARS.map(y => (
+                            <option key={y} value={y}>{y}</option>
+                          ))}
+                        </select>
+                      </div>
                     </div>
                   </div>
                 ))}

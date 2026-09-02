@@ -525,7 +525,7 @@ export const AdminDashboard = ({ isOpen, onClose, onSelectTeam }) => {
                                     <span style={{ fontSize: '0.72rem', color: '#059669', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
                                       MEMBER {mIdx + 2}
                                     </span>
-                                    <span style={{ fontSize: '0.72rem', color: '#6b7280' }}>
+                                    <span style={{ fontSize: '0.72rem', color: '#059669', fontWeight: 700, background: '#ecfdf5', padding: '0.15rem 0.45rem', borderRadius: '4px', border: '1px solid rgba(5, 150, 105, 0.2)' }}>
                                       {m.academicYear || '3rd Year'}
                                     </span>
                                   </div>
@@ -547,50 +547,13 @@ export const AdminDashboard = ({ isOpen, onClose, onSelectTeam }) => {
                                       <Building size={13} color="#059669" />
                                       <span>{m.department || 'CSE'}</span>
                                     </div>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                                      <span style={{ color: '#059669', fontWeight: 700 }}>🎓 Year:</span>
+                                      <span>{m.academicYear || '3rd Year'}</span>
+                                    </div>
                                   </div>
                                 </div>
                               ))}
-                            </div>
-                          </div>
-
-                          {/* 2. Additional Meta & Scores */}
-                          <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-                            gap: '1rem',
-                            background: '#f4f8f6',
-                            borderRadius: '8px',
-                            padding: '1rem',
-                            fontSize: '0.82rem'
-                          }}>
-                            <div>
-                              <div style={{ color: '#059669', fontWeight: 700, fontFamily: 'var(--font-mono)', marginBottom: '0.25rem' }}>
-                                💡 PROJECT SUMMARY / PROTOTYPE IDEA
-                              </div>
-                              <div style={{ color: '#1f2937', fontStyle: team.projectIdeaSummary ? 'normal' : 'italic' }}>
-                                {team.projectIdeaSummary || 'No preliminary summary submitted.'}
-                              </div>
-                            </div>
-
-                            <div>
-                              <div style={{ color: '#059669', fontWeight: 700, fontFamily: 'var(--font-mono)', marginBottom: '0.25rem' }}>
-                                📊 SCORES (500 PTS TARGET)
-                              </div>
-                              <div style={{ color: '#1f2937' }}>
-                                Round 1: <strong>{team.scores?.round1 || 0}</strong> | Round 2: <strong>{team.scores?.round2 || 0}</strong> | Round 3: <strong>{team.scores?.round3 || 0}</strong>
-                              </div>
-                              <div style={{ color: '#059669', fontWeight: 800, marginTop: '0.2rem' }}>
-                                Total Cumulative: {team.scores?.total || 0} / 500 Pts
-                              </div>
-                            </div>
-
-                            <div>
-                              <div style={{ color: '#059669', fontWeight: 700, fontFamily: 'var(--font-mono)', marginBottom: '0.25rem' }}>
-                                ⏱ REGISTRATION TIMESTAMP
-                              </div>
-                              <div style={{ color: '#4b5563' }}>
-                                {team.createdAt ? new Date(team.createdAt).toLocaleString() : 'N/A'}
-                              </div>
                             </div>
                           </div>
 
