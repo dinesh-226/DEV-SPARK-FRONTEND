@@ -86,8 +86,8 @@ export const MentorsSection = ({ onRegisterClick }) => {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '2rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '1.75rem'
           }}>
             {facultyMentors.map((mentor, idx) => (
               <TiltCard3D
@@ -96,8 +96,9 @@ export const MentorsSection = ({ onRegisterClick }) => {
                 maxTilt={8}
                 style={{
                   display: 'flex',
-                  gap: '1.75rem',
-                  padding: '1.75rem 2rem',
+                  flexWrap: 'wrap',
+                  gap: '1.5rem',
+                  padding: '1.75rem 1.75rem',
                   alignItems: 'center',
                   background: '#ffffff',
                   border: '1px solid rgba(5, 150, 105, 0.18)',
@@ -161,16 +162,17 @@ export const MentorsSection = ({ onRegisterClick }) => {
         <div style={{ marginBottom: '4.5rem' }}>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '2rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '1.75rem'
           }}>
             <TiltCard3D
               className="dribbble-card"
               maxTilt={8}
               style={{
                 display: 'flex',
-                gap: '1.75rem',
-                padding: '1.75rem 2rem',
+                flexWrap: 'wrap',
+                gap: '1.5rem',
+                padding: '1.75rem 1.75rem',
                 alignItems: 'center',
                 background: '#ffffff',
                 border: '1px solid rgba(5, 150, 105, 0.18)',

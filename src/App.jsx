@@ -61,9 +61,6 @@ export const App = () => {
       <RegistrationModal
         isOpen={registerModalOpen}
         onClose={() => setRegisterModalOpen(false)}
-        onRegistrationSuccess={(registeredTeam) => {
-          setActivePassTeam(registeredTeam);
-        }}
       />
 
       {/* Digital DevSpark Team Pass Modal */}
