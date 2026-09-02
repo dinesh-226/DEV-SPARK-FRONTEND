@@ -1,15 +1,9 @@
-// Determine API base URL dynamically for local dev and live Vercel production
-const getApiBase = () => {
-  if (import.meta.env.VITE_API_BASE_URL) {
-    return import.meta.env.VITE_API_BASE_URL.replace(/\/$/, '');
-  }
-  if (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-    return 'https://dev-spark-backend.vercel.app/api';
-  }
-  return '/api';
-};
+// Always use deployed backend in production, or local server in localhost
+const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
 
-const API_BASE = getApiBase();
+const API_BASE = isLocal
+  ? (import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api')
+  : 'https://dev-spark-backend.vercel.app/api';
 
 export const registerTeamAPI = async (teamData) => {
   try {
@@ -18,6 +12,17 @@ export const registerTeamAPI = async (teamData) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(teamData)
     });
+    
+    if (!res.ok) {
+      const errText = await res.text();
+      let parsed;
+      try { parsed = JSON.parse(errText); } catch (e) {}
+      return { 
+        success: false, 
+        message: (parsed && parsed.message) || `Server returned error (${res.status}). Please try again.` 
+      };
+    }
+    
     return await res.json();
   } catch (error) {
     console.error('API Error registerTeam:', error);
@@ -29,6 +34,7 @@ export const fetchTeamsAPI = async (params = {}) => {
   try {
     const query = new URLSearchParams(params).toString();
     const res = await fetch(`${API_BASE}/teams?${query}`);
+    if (!res.ok) return { success: false, data: [] };
     return await res.json();
   } catch (error) {
     console.error('API Error fetchTeams:', error);
@@ -39,6 +45,7 @@ export const fetchTeamsAPI = async (params = {}) => {
 export const fetchTeamByIdAPI = async (id) => {
   try {
     const res = await fetch(`${API_BASE}/teams/${id}`);
+    if (!res.ok) return { success: false, message: 'Could not connect to server.' };
     return await res.json();
   } catch (error) {
     console.error('API Error fetchTeamById:', error);
@@ -51,6 +58,7 @@ export const getTeamByIdAPI = fetchTeamByIdAPI;
 export const fetchStatsAPI = async () => {
   try {
     const res = await fetch(`${API_BASE}/stats`);
+    if (!res.ok) throw new Error('Stats fetch non-200');
     return await res.json();
   } catch (error) {
     console.error('API Error fetchStats:', error);
