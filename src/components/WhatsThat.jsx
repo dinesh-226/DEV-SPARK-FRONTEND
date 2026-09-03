@@ -171,12 +171,13 @@ export const WhatsThat = ({ onRegisterClick }) => {
               position: 'relative',
               borderRadius: '10px',
               overflow: 'hidden',
-              background: '#071e16',
-              aspectRatio: '16/10',
+              background: '#04130d',
+              minHeight: '280px',
+              maxHeight: '460px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              border: '1.5px solid rgba(5, 150, 105, 0.3)',
+              border: '1.5px solid rgba(5, 150, 105, 0.35)',
               boxShadow: '0 8px 24px rgba(6, 78, 59, 0.12)'
             }}
           >
@@ -187,10 +188,11 @@ export const WhatsThat = ({ onRegisterClick }) => {
               preload="metadata"
               style={{
                 width: '100%',
-                height: '100%',
-                objectFit: 'cover',
+                maxHeight: '460px',
+                objectFit: 'contain',
                 borderRadius: '8px',
-                display: 'block'
+                display: 'block',
+                background: '#000000'
               }}
             />
 
@@ -202,14 +204,14 @@ export const WhatsThat = ({ onRegisterClick }) => {
               fontSize: '0.72rem',
               fontFamily: 'var(--font-mono)',
               color: '#ffffff',
-              background: 'rgba(5, 150, 105, 0.88)',
+              background: 'rgba(5, 150, 105, 0.92)',
               backdropFilter: 'blur(8px)',
               padding: '0.3rem 0.65rem',
               borderRadius: '4px',
               fontWeight: 800,
               zIndex: 2,
               pointerEvents: 'none',
-              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)'
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.35)'
             }}>
               ▶ SPRINT HIGHLIGHT REEL & PROTOTYPE DEMOS
             </div>
