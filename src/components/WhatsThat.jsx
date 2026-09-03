@@ -165,62 +165,51 @@ export const WhatsThat = ({ onRegisterClick }) => {
             boxShadow: '0 8px 30px rgba(6, 78, 59, 0.06)'
           }}
         >
-          {/* Left Video Box */}
+          {/* Left Video Player Box */}
           <div
             style={{
               position: 'relative',
-              borderRadius: '8px',
+              borderRadius: '10px',
               overflow: 'hidden',
-              background: 'linear-gradient(135deg, #e8f5ee 0%, #d1fae5 100%)',
+              background: '#071e16',
               aspectRatio: '16/10',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              border: '1px solid rgba(5, 150, 105, 0.15)',
-              cursor: 'pointer'
+              border: '1.5px solid rgba(5, 150, 105, 0.3)',
+              boxShadow: '0 8px 24px rgba(6, 78, 59, 0.12)'
             }}
-            onClick={() => setIsPlaying(!isPlaying)}
           >
-            {/* Tech Wireframe Background Grid */}
-            <div style={{
-              position: 'absolute',
-              inset: 0,
-              backgroundImage: 'radial-gradient(circle, rgba(5, 150, 105, 0.15) 1px, transparent 1px)',
-              backgroundSize: '20px 20px',
-              opacity: 0.8
-            }} />
-
-            {/* Glowing Emerald Play Button */}
-            <div
+            <video
+              src="/organizers/highlight_reel.mp4"
+              controls
+              playsInline
+              preload="metadata"
               style={{
-                width: '68px',
-                height: '68px',
-                borderRadius: '50%',
-                background: '#059669',
-                color: '#ffffff',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: '0 4px 25px rgba(5, 150, 105, 0.5)',
-                position: 'relative',
-                zIndex: 2,
-                transition: 'transform 0.2s ease'
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                borderRadius: '8px',
+                display: 'block'
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-            >
-              <Play size={28} style={{ marginLeft: '4px' }} />
-            </div>
+            />
 
+            {/* Badge Overlay */}
             <div style={{
               position: 'absolute',
-              bottom: '1rem',
-              left: '1.25rem',
-              fontSize: '0.78rem',
+              top: '0.85rem',
+              left: '0.85rem',
+              fontSize: '0.72rem',
               fontFamily: 'var(--font-mono)',
-              color: '#047857',
-              fontWeight: 700,
-              zIndex: 2
+              color: '#ffffff',
+              background: 'rgba(5, 150, 105, 0.88)',
+              backdropFilter: 'blur(8px)',
+              padding: '0.3rem 0.65rem',
+              borderRadius: '4px',
+              fontWeight: 800,
+              zIndex: 2,
+              pointerEvents: 'none',
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)'
             }}>
               ▶ SPRINT HIGHLIGHT REEL & PROTOTYPE DEMOS
             </div>
