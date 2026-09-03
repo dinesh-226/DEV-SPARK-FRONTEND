@@ -195,26 +195,6 @@ export const WhatsThat = ({ onRegisterClick }) => {
                 background: '#000000'
               }}
             />
-
-            {/* Badge Overlay */}
-            <div style={{
-              position: 'absolute',
-              top: '0.85rem',
-              left: '0.85rem',
-              fontSize: '0.72rem',
-              fontFamily: 'var(--font-mono)',
-              color: '#ffffff',
-              background: 'rgba(5, 150, 105, 0.92)',
-              backdropFilter: 'blur(8px)',
-              padding: '0.3rem 0.65rem',
-              borderRadius: '4px',
-              fontWeight: 800,
-              zIndex: 2,
-              pointerEvents: 'none',
-              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.35)'
-            }}>
-              ▶ SPRINT HIGHLIGHT REEL & PROTOTYPE DEMOS
-            </div>
           </div>
 
           {/* Right Quote & Philosophy */}
