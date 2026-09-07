@@ -75,7 +75,7 @@ export const DetailsRounds = () => {
         {/* 2 Stage Sprint Overview Cards */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
           gap: '1.75rem',
           marginBottom: '3.5rem'
         }}>
@@ -164,7 +164,7 @@ export const DetailsRounds = () => {
           padding: '1.75rem 2rem',
           marginBottom: '3.5rem',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
           gap: '1.5rem',
           alignItems: 'center',
           boxShadow: '0 4px 20px rgba(6, 78, 59, 0.05)'
@@ -244,7 +244,7 @@ export const DetailsRounds = () => {
             borderRadius: '12px',
             padding: '2.5rem',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: '2.5rem',
             alignItems: 'center',
             boxShadow: '0 8px 30px rgba(6, 78, 59, 0.06)'

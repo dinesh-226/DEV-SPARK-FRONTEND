@@ -105,15 +105,15 @@ export const WhatsThat = ({ onRegisterClick }) => {
         {/* 4 Clean Cards Grid on Pure White Cards */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))',
           gap: '1.5rem',
-          marginBottom: '4.5rem'
+          marginBottom: '4rem'
         }}>
           {features.map((item) => (
             <TiltCard3D
               key={item.num}
               className="dribbble-card"
-              maxTilt={10}
+              maxTilt={8}
               style={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -150,35 +150,34 @@ export const WhatsThat = ({ onRegisterClick }) => {
         </div>
 
         {/* Video / Quote Showcase Block */}
-        <TiltCard3D
-          maxTilt={6}
+        <div
+          className="showcase-video-card"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3rem',
-            alignItems: 'center',
-            marginBottom: '4.5rem',
-            padding: '2.5rem',
+            marginBottom: '4rem',
             background: '#ffffff',
             border: '1px solid rgba(5, 150, 105, 0.22)',
             borderRadius: '12px',
-            boxShadow: '0 8px 30px rgba(6, 78, 59, 0.06)'
+            boxShadow: '0 8px 30px rgba(6, 78, 59, 0.06)',
+            boxSizing: 'border-box',
+            overflow: 'hidden'
           }}
         >
-          {/* Left Video Player Box */}
+          {/* Video Player Box */}
           <div
+            className="showcase-video-wrapper"
             style={{
               position: 'relative',
               borderRadius: '10px',
               overflow: 'hidden',
               background: '#04130d',
-              minHeight: '280px',
-              maxHeight: '460px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               border: '1.5px solid rgba(5, 150, 105, 0.35)',
-              boxShadow: '0 8px 24px rgba(6, 78, 59, 0.12)'
+              boxShadow: '0 8px 24px rgba(6, 78, 59, 0.12)',
+              width: '100%',
+              aspectRatio: '16/9',
+              boxSizing: 'border-box'
             }}
           >
             <video
@@ -188,7 +187,7 @@ export const WhatsThat = ({ onRegisterClick }) => {
               preload="metadata"
               style={{
                 width: '100%',
-                maxHeight: '460px',
+                height: '100%',
                 objectFit: 'contain',
                 borderRadius: '8px',
                 display: 'block',
@@ -197,34 +196,36 @@ export const WhatsThat = ({ onRegisterClick }) => {
             />
           </div>
 
-          {/* Right Quote & Philosophy */}
-          <div>
+          {/* Quote & Philosophy */}
+          <div className="showcase-quote-content" style={{ boxSizing: 'border-box', width: '100%' }}>
             <blockquote style={{
-              fontSize: '1.45rem',
+              fontSize: 'clamp(1.15rem, 3.5vw, 1.45rem)',
               fontWeight: 700,
               color: '#0f2e22',
-              lineHeight: 1.35,
+              lineHeight: 1.4,
               marginBottom: '0.75rem',
-              fontFamily: 'var(--font-heading)'
+              fontFamily: 'var(--font-heading)',
+              wordBreak: 'break-word',
+              overflowWrap: 'break-word'
             }}>
               "Tell me and I will forget, show me and I may remember, involve me and I will understand."
             </blockquote>
-            <div style={{ color: '#059669', fontWeight: 700, fontSize: '0.92rem', marginBottom: '1.25rem' }}>
+            <div style={{ color: '#059669', fontWeight: 700, fontSize: '0.88rem', marginBottom: '1.15rem' }}>
               Xunzi • Applied Learning Philosophy
             </div>
 
-            <p style={{ color: '#4b5563', fontSize: '0.92rem', lineHeight: 1.65, margin: 0 }}>
+            <p style={{ color: '#4b5563', fontSize: 'clamp(0.85rem, 2.5vw, 0.92rem)', lineHeight: 1.65, margin: 0, wordBreak: 'break-word', overflowWrap: 'break-word' }}>
               DevSpark is built on developer-first community principles. Rather than passive lectures, every student actively diagnoses code, tests edge cases, and builds functional prototypes before an expert jury.
             </p>
           </div>
-        </TiltCard3D>
+        </div>
 
         {/* 3 Interactive Feature Highlights */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
           gap: '2rem',
-          paddingTop: '1rem'
+          paddingTop: '0.5rem'
         }}>
           {highlights.map((h, i) => {
             const Icon = h.icon;

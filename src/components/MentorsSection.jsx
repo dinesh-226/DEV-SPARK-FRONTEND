@@ -86,7 +86,7 @@ export const MentorsSection = ({ onRegisterClick }) => {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: '1.75rem'
           }}>
             {facultyMentors.map((mentor, idx) => (
@@ -187,14 +187,14 @@ export const MentorsSection = ({ onRegisterClick }) => {
             borderLeft: '2.5px solid #059669',
             borderBottom: '2.5px solid #059669',
             borderRadius: '0 0 0 20px',
-            padding: '1.5rem 0 2.5rem 2rem',
+            padding: '1.5rem 0 2.5rem clamp(0.75rem, 3vw, 2rem)',
             position: 'relative'
           }}>
 
             {/* Coordinators Grid with 3D Tilt */}
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
               gap: '1.5rem',
               marginBottom: '3rem'
             }}>

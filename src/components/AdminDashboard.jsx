@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ShieldCheck, X, Download, Search, RefreshCw, Key, LogOut, ChevronDown, ChevronUp, User, Phone, Mail, GraduationCap, Building, Award, Clock } from 'lucide-react';
-import { getAllTeamsAdminAPI, exportTeamsCsvAPI, updateTeamStatusAPI } from '../services/api';
+import { getAllTeamsAdminAPI, exportTeamsCsvAPI } from '../services/api';
 
 export const AdminDashboard = ({ isOpen, onClose, onSelectTeam }) => {
   const [passcode, setPasscode] = useState('');
@@ -71,17 +71,6 @@ export const AdminDashboard = ({ isOpen, onClose, onSelectTeam }) => {
 
   const handleExportCSV = () => {
     exportTeamsCsvAPI(passcode.trim());
-  };
-
-  const handleTableChange = async (teamId, tableNo) => {
-    try {
-      const res = await updateTeamStatusAPI(teamId, { tableNumber: tableNo });
-      if (res.success) {
-        setTeams(teams.map(t => (t.registrationId === teamId || t._id === teamId ? { ...t, tableNumber: tableNo } : t)));
-      }
-    } catch (e) {
-      console.error(e);
-    }
   };
 
   const filteredTeams = teams.filter(t => {
@@ -386,69 +375,27 @@ export const AdminDashboard = ({ isOpen, onClose, onSelectTeam }) => {
                           </div>
                         </div>
 
-                        {/* Controls: Table Assign, View Pass, Expand */}
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
-                          {/* Table Select */}
-                          <select
-                            value={team.tableNumber || 'Unassigned'}
-                            onChange={(e) => handleTableChange(regId, e.target.value)}
-                            style={{
-                              background: '#f4f8f6',
-                              border: '1px solid rgba(5, 150, 105, 0.25)',
-                              borderRadius: '6px',
-                              padding: '0.35rem 0.6rem',
-                              fontSize: '0.78rem',
-                              color: '#0f2e22',
-                              fontWeight: 600
-                            }}
-                          >
-                            <option value="Unassigned">Table: Unassigned</option>
-                            {[...Array(20)].map((_, i) => (
-                              <option key={i+1} value={`Table ${String(i+1).padStart(2, '0')}`}>
-                                Table {String(i+1).padStart(2, '0')}
-                              </option>
-                            ))}
-                          </select>
-
-                          {/* Pass Preview Button */}
-                          <button
-                            onClick={() => {
-                              onClose();
-                              onSelectTeam(team);
-                            }}
-                            style={{
-                              background: '#ffffff',
-                              border: '1px solid #059669',
-                              color: '#059669',
-                              borderRadius: '6px',
-                              padding: '0.35rem 0.75rem',
-                              fontSize: '0.78rem',
-                              fontWeight: 700,
-                              cursor: 'pointer'
-                            }}
-                          >
-                            Pass / QR
-                          </button>
-
-                          {/* Expand Details Button */}
+                        {/* Controls: Expand Team Dossier */}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                           <button
                             onClick={() => setExpandedTeamId(isExpanded ? null : regId)}
                             style={{
-                              background: '#f4f8f6',
-                              border: '1px solid rgba(5, 150, 105, 0.2)',
-                              color: '#0f2e22',
+                              background: isExpanded ? '#ecfdf5' : '#f4f8f6',
+                              border: isExpanded ? '1px solid #059669' : '1px solid rgba(5, 150, 105, 0.25)',
+                              color: isExpanded ? '#059669' : '#0f2e22',
                               borderRadius: '6px',
-                              padding: '0.35rem 0.65rem',
-                              fontSize: '0.78rem',
+                              padding: '0.45rem 0.85rem',
+                              fontSize: '0.82rem',
                               fontWeight: 700,
                               cursor: 'pointer',
                               display: 'flex',
                               alignItems: 'center',
-                              gap: '0.2rem'
+                              gap: '0.35rem',
+                              transition: 'all 0.2s ease'
                             }}
                           >
                             <span>{isExpanded ? 'Hide Info' : 'Show All Info'}</span>
-                            {isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+                            {isExpanded ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
                           </button>
                         </div>
                       </div>

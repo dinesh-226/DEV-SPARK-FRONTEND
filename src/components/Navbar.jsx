@@ -48,11 +48,11 @@ export const Navbar = ({ onOpenAdmin, onOpenRegister }) => {
         boxShadow: scrolled ? '0 2px 15px rgba(6, 78, 59, 0.06)' : 'none'
       }}
     >
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div className="container navbar-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
         
         {/* Green Themed Logo */}
-        <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', textDecoration: 'none' }}>
-          <div style={{
+        <a href="#" className="navbar-logo" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', flexShrink: 0 }}>
+          <div className="navbar-logo-icon" style={{
             width: '32px',
             height: '32px',
             borderRadius: '8px',
@@ -61,17 +61,18 @@ export const Navbar = ({ onOpenAdmin, onOpenRegister }) => {
             alignItems: 'center',
             justifyContent: 'center',
             color: '#ffffff',
-            boxShadow: '0 2px 8px rgba(5, 150, 105, 0.3)'
+            boxShadow: '0 2px 8px rgba(5, 150, 105, 0.3)',
+            flexShrink: 0
           }}>
-            <Sparkles size={18} />
+            <Sparkles size={17} />
           </div>
-          <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#0f2e22', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>
+          <span className="navbar-logo-text" style={{ fontSize: '1.35rem', fontWeight: 800, color: '#0f2e22', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)', whiteSpace: 'nowrap' }}>
             dev<span style={{ color: '#059669' }}>spark</span>
           </span>
         </a>
 
         {/* Desktop Nav Links */}
-        <nav style={{ display: 'none', alignItems: 'center', gap: '2rem' }} className="desktop-nav">
+        <nav style={{ display: 'none', alignItems: 'center', gap: '1.75rem' }} className="desktop-nav">
           {navLinks.map(link => (
             <a
               key={link.name}
@@ -85,17 +86,18 @@ export const Navbar = ({ onOpenAdmin, onOpenRegister }) => {
         </nav>
 
         {/* Right Action Buttons */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+        <div className="navbar-actions" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexShrink: 0 }}>
           <button
             onClick={onOpenRegister}
-            className="btn-dribbble btn-dribbble-primary"
-            style={{ padding: '0.55rem 1.4rem', fontSize: '0.9rem' }}
+            className="btn-dribbble btn-dribbble-primary navbar-register-btn"
+            style={{ padding: '0.5rem 1.25rem', fontSize: '0.88rem' }}
           >
             <span>Register</span>
           </button>
 
           <button
             onClick={onOpenAdmin}
+            className="navbar-admin-btn"
             style={{
               background: '#ffffff',
               border: '1px solid rgba(5, 150, 105, 0.25)',
@@ -108,7 +110,8 @@ export const Navbar = ({ onOpenAdmin, onOpenRegister }) => {
               alignItems: 'center',
               justifyContent: 'center',
               transition: 'all 0.2s ease',
-              boxShadow: '0 1px 3px rgba(6, 78, 59, 0.05)'
+              boxShadow: '0 1px 3px rgba(6, 78, 59, 0.05)',
+              flexShrink: 0
             }}
             title="Coordinator Admin Console"
             onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#047857'; e.currentTarget.style.background = '#ecfdf5'; }}
@@ -127,8 +130,10 @@ export const Navbar = ({ onOpenAdmin, onOpenRegister }) => {
               color: '#0f2e22',
               cursor: 'pointer',
               display: 'none',
-              padding: '0.3rem'
+              padding: '0.3rem',
+              flexShrink: 0
             }}
+            aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -141,10 +146,11 @@ export const Navbar = ({ onOpenAdmin, onOpenRegister }) => {
         <div style={{
           background: '#ffffff',
           borderBottom: '1px solid rgba(5, 150, 105, 0.25)',
-          padding: '1.25rem 2rem',
+          padding: '1.25rem 1.5rem',
           display: 'flex',
           flexDirection: 'column',
-          gap: '0.75rem'
+          gap: '0.75rem',
+          boxShadow: '0 10px 25px rgba(6, 78, 59, 0.08)'
         }}>
           {navLinks.map(link => (
             <a
@@ -162,6 +168,15 @@ export const Navbar = ({ onOpenAdmin, onOpenRegister }) => {
               {link.name}
             </a>
           ))}
+          <div style={{ paddingTop: '0.5rem', borderTop: '1px solid rgba(5, 150, 105, 0.12)', marginTop: '0.25rem' }}>
+            <button
+              onClick={() => { setMobileMenuOpen(false); onOpenRegister(); }}
+              className="btn-dribbble btn-dribbble-primary"
+              style={{ width: '100%', padding: '0.65rem 1rem', fontSize: '0.92rem' }}
+            >
+              Register Team
+            </button>
+          </div>
         </div>
       )}
 
@@ -173,7 +188,41 @@ export const Navbar = ({ onOpenAdmin, onOpenRegister }) => {
         }
         @media (max-width: 959px) {
           .mobile-menu-btn {
-            display: block !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        @media (max-width: 640px) {
+          .navbar-logo-text {
+            font-size: 1.15rem !important;
+          }
+          .navbar-logo-icon {
+            width: 26px !important;
+            height: 26px !important;
+          }
+          .navbar-register-btn {
+            padding: 0.42rem 0.8rem !important;
+            font-size: 0.82rem !important;
+          }
+          .navbar-admin-btn {
+            width: 32px !important;
+            height: 32px !important;
+          }
+          .navbar-actions {
+            gap: 0.4rem !important;
+          }
+        }
+        @media (max-width: 380px) {
+          .navbar-logo-text {
+            font-size: 1.05rem !important;
+          }
+          .navbar-register-btn {
+            padding: 0.35rem 0.65rem !important;
+            font-size: 0.78rem !important;
+          }
+          .navbar-actions {
+            gap: 0.3rem !important;
           }
         }
       `}</style>

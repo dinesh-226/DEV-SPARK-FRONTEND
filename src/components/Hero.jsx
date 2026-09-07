@@ -10,7 +10,7 @@ export const Hero = ({ onRegisterClick }) => {
         {/* Main 2-Column Hero Grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
           gap: '2.5rem',
           alignItems: 'center',
           marginBottom: '4rem'
