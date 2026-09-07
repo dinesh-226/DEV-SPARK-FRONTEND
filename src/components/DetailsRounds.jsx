@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   Terminal, Cpu, Clock, CheckCircle2, ArrowRight, Download, 
-  FileText, Shield, Sparkles, Layers, BookOpen, Users, DollarSign, AlertTriangle, Code, Award
+  FileText, Shield, Sparkles, Layers, Award
 } from 'lucide-react';
 import { TiltCard3D } from './TiltCard3D';
 
@@ -39,36 +39,20 @@ export const DetailsRounds = () => {
     {
       id: 'round2',
       tag: 'STAGE 02',
-      title: 'Round 2: DevSprint (AI-Augmented)',
+      title: 'Round 2: DevSprint Showcase & Defense',
       points: '250 Points',
-      time: '11:30 AM – 04:15 PM (90 Mins Build + Stage Defense)',
+      time: '11:15 AM – 01:15 PM (Phase 1 Demos & Phase 2 Finalist Defense)',
       color: '#047857', // Forest Green
       icon: Cpu,
-      desc: 'Translate one chosen challenge problem statement into a functional, user-centric prototype utilizing approved Generative AI assistants with live jury stage defense.',
+      desc: 'Build your AI prototype solution beforehand from home based on the problem tracks. On event day, showcase and defend your live working prototype across Phase 1 demos and Phase 2 Top 5–7 finalist defense.',
       details: [
-        '5 Challenge Tracks: Squads select exactly 1 track at the start; switching tracks mid-way is forbidden',
-        'AI Tooling Approved: ChatGPT, Gemini, Claude, GitHub Copilot, v0, Cursor & agentic code editors',
+        'Build from Home: Develop full working code beforehand using ChatGPT, Gemini, Claude, Copilot, v0, Cursor',
+        'Phase 1 Demos (11:15 AM – 12:00 PM): All squads demonstrate their live running prototype before the jury',
+        'Phase 2 Finalist Defense (12:15 PM – 01:15 PM): Top 5 to 7 shortlisted teams deliver in-depth stage defense and jury Q&A',
         'The "Zero-Black-Box" Rule: Every member must explain component logic, state handlers, and APIs without rote copy-pasting',
-        'Mandatory Prompt Logging: Submit an AI_PROMPT_LOG.md with the top 3–5 system and scaffolding prompts',
         'Live Dynamic Execution: Prototypes must execute live with reactive inputs (0 pts for static Figma/wireframes)'
       ]
     }
-  ];
-
-  // Official Round 2 Jury Evaluation Rubric (250 Points)
-  const rubric = [
-    { criterion: '1. Problem Alignment & Practical Utility', max: '60 Pts', desc: 'Direct fidelity to the chosen track; real-world feasibility, campus scalability, and tangible utility.' },
-    { criterion: '2. Functional Architecture & System Stability', max: '70 Pts', desc: 'Crash-free live execution; robust input validation, modular architecture, and error handling resilience.' },
-    { criterion: '3. AI Tool Orchestration & Prompt Mastery', max: '40 Pts', desc: 'Methodical multi-turn prompting demonstrated in AI_PROMPT_LOG.md; sophisticated prompt engineering vs superficial copy-pasting.' },
-    { criterion: '4. UI/UX Design & User Experience', max: '40 Pts', desc: 'Visual polish, layout responsiveness, intuitive information hierarchy, and cognitive ease for end users.' },
-    { criterion: '5. Technical Defense & Live Q&A', max: '40 Pts', desc: 'Clarity and precision during jury cross-examination; technical depth, team balance, and defense of architectural trade-offs.' }
-  ];
-
-  // Technical Deliverables
-  const deliverables = [
-    { title: '1. Working Source Code', desc: 'Complete source repository (Web application, Mobile client, or CLI tool) containing all components required for execution.' },
-    { title: '2. README.md', desc: 'Clear, step-by-step instructions to install dependencies and run the project locally, or a working hosted link (Vercel, Streamlit, Netlify).' },
-    { title: '3. AI_PROMPT_LOG.md', desc: 'A transparent log containing 3–5 primary system, architecture, or logic prompts used across the build to verify prompt engineering proficiency.' }
   ];
 
   return (
@@ -93,7 +77,7 @@ export const DetailsRounds = () => {
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
           gap: '1.75rem',
-          marginBottom: '4rem'
+          marginBottom: '3.5rem'
         }}>
           {stages.map((stg, idx) => {
             const Icon = stg.icon;
@@ -178,7 +162,7 @@ export const DetailsRounds = () => {
           border: '1.5px solid rgba(5, 150, 105, 0.25)',
           borderRadius: '12px',
           padding: '1.75rem 2rem',
-          marginBottom: '4.5rem',
+          marginBottom: '3.5rem',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: '1.5rem',
@@ -246,104 +230,6 @@ export const DetailsRounds = () => {
               <Download size={15} />
               <span>Rules & Rubric Matrix (PDF)</span>
             </a>
-          </div>
-        </div>
-
-        {/* =========================================================================
-            OFFICIAL EVALUATION RUBRIC & DELIVERABLES (250 POINTS)
-           ========================================================================= */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '2rem',
-          marginBottom: '4.5rem'
-        }}>
-          {/* Left: 250-Pt Rubric Table */}
-          <div style={{
-            background: '#ffffff',
-            border: '1px solid rgba(5, 150, 105, 0.22)',
-            borderRadius: '12px',
-            padding: '2rem',
-            boxShadow: '0 4px 20px rgba(6, 78, 59, 0.05)'
-          }}>
-            <div className="crimson-pill" style={{ marginBottom: '0.5rem' }}>
-              STAGE 2 JURY RUBRIC (250 PTS)
-            </div>
-            <h4 style={{ fontSize: '1.3rem', color: '#0f2e22', marginBottom: '1.25rem', fontWeight: 800 }}>
-              Official Evaluation Criteria
-            </h4>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-              {rubric.map((r, i) => (
-                <div
-                  key={i}
-                  style={{
-                    borderBottom: i !== rubric.length - 1 ? '1px solid rgba(5, 150, 105, 0.08)' : 'none',
-                    paddingBottom: i !== rubric.length - 1 ? '0.85rem' : '0'
-                  }}
-                >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.25rem' }}>
-                    <span style={{ fontSize: '0.92rem', color: '#0f2e22', fontWeight: 700 }}>
-                      {r.criterion}
-                    </span>
-                    <span style={{ fontSize: '0.85rem', color: '#059669', fontWeight: 800, fontFamily: 'var(--font-mono)' }}>
-                      {r.max}
-                    </span>
-                  </div>
-                  <p style={{ fontSize: '0.82rem', color: '#4b5563', margin: 0, lineHeight: 1.45 }}>
-                    {r.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: Technical Deliverables & Core Policies */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div style={{
-              background: '#ffffff',
-              border: '1px solid rgba(5, 150, 105, 0.22)',
-              borderRadius: '12px',
-              padding: '2rem',
-              boxShadow: '0 4px 20px rgba(6, 78, 59, 0.05)'
-            }}>
-              <div className="crimson-pill" style={{ marginBottom: '0.5rem' }}>
-                SUBMISSION STANDARDS
-              </div>
-              <h4 style={{ fontSize: '1.3rem', color: '#0f2e22', marginBottom: '1rem', fontWeight: 800 }}>
-                3 Technical Deliverables
-              </h4>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-                {deliverables.map((item, idx) => (
-                  <div key={idx} style={{ background: '#f4f8f6', borderRadius: '8px', padding: '0.85rem 1rem', border: '1px solid rgba(5, 150, 105, 0.12)' }}>
-                    <div style={{ fontSize: '0.9rem', color: '#059669', fontWeight: 800, fontFamily: 'var(--font-mono)', marginBottom: '0.2rem' }}>
-                      {item.title}
-                    </div>
-                    <div style={{ fontSize: '0.82rem', color: '#4b5563', lineHeight: 1.45 }}>
-                      {item.desc}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Zero Black Box Policy Callout */}
-            <div style={{
-              background: '#ecfdf5',
-              border: '1.5px solid #059669',
-              borderRadius: '12px',
-              padding: '1.5rem',
-              boxShadow: '0 4px 15px rgba(5, 150, 105, 0.1)'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#047857', fontWeight: 800, fontSize: '0.95rem', marginBottom: '0.4rem' }}>
-                <Shield size={18} />
-                <span>The "Zero-Black-Box" Rule</span>
-              </div>
-              <p style={{ fontSize: '0.85rem', color: '#064e3b', margin: 0, lineHeight: 1.55 }}>
-                AI tools are authorized for rapid scaffolding. However, every squad member must independently explain component logic, state mutations, and API calls during live jury examination. Inability to explain code triggers severe point deductions.
-              </p>
-            </div>
           </div>
         </div>
 

@@ -75,7 +75,7 @@ export const Hero = ({ onRegisterClick }) => {
               maxWidth: '475px',
               marginBottom: '1.75rem'
             }}>
-              Join us to discover new ways to build and innovate. A multidisciplinary 350-point sprint bridging foundational algorithmic logic (40 MCQs) and rapid AI prototype solution builds by Team Stack Tracers at ABIET Pathankot.
+              Join us to discover new ways to build and innovate. A multidisciplinary 350-point sprint: build your AI prototype beforehand from home and showcase your live working project before our expert jury at ABIET Pathankot.
             </p>
 
             {/* CTA & Official Document Download Buttons */}
@@ -216,10 +216,10 @@ export const Hero = ({ onRegisterClick }) => {
             </div>
             <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f2e22', lineHeight: 1.3 }}>
               Master Sprint <br />
-              09:00 AM – 05:15 PM
+              09:30 AM – 02:30 PM
             </div>
             <div style={{ fontSize: '0.85rem', color: '#4b5563', marginTop: '0.25rem' }}>
-              Reporting: 09:00 AM Sharp
+              Reporting: 09:30 AM Sharp
             </div>
           </div>
 

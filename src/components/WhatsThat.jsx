@@ -22,9 +22,9 @@ export const WhatsThat = ({ onRegisterClick }) => {
     },
     {
       num: '03',
-      title: 'AI Tools Permitted',
-      subtitle: 'Rapid Prototype Scaffolding',
-      desc: 'Generative AI tools (ChatGPT, Gemini, Claude, GitHub Copilot, v0, Cursor) are fully authorized for boilerplate, UI synthesis, and scaffolding.',
+      title: 'Build at Home, Demo Live',
+      subtitle: 'AI-Augmented Solutions',
+      desc: 'Build and refine your project beforehand from home using ChatGPT, Gemini, Claude, Copilot, v0, and Cursor. On event day, showcase and defend your working prototype.',
       color: '#10b981' // Mint Bright Green
     },
     {
@@ -45,14 +45,14 @@ export const WhatsThat = ({ onRegisterClick }) => {
     },
     {
       icon: Coffee,
-      title: 'Snacks & Refreshments',
+      title: 'Lunch & Refreshments',
       desc: 'Complimentary mid-day meals and networking breaks provided.',
       color: '#047857'
     },
     {
       icon: Clock,
-      title: 'Synchronized AI Sprint',
-      desc: '09:00 AM to 05:15 PM full single-day rapid innovation challenge.',
+      title: 'Single-Day Showcase',
+      desc: '09:30 AM to 02:30 PM structured assessment and prototype stage showcase.',
       color: '#10b981'
     }
   ];
@@ -147,83 +147,6 @@ export const WhatsThat = ({ onRegisterClick }) => {
               </div>
             </TiltCard3D>
           ))}
-        </div>
-
-        {/* Official Document Downloads Banner */}
-        <div style={{
-          background: 'linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%)',
-          border: '1.5px solid rgba(5, 150, 105, 0.25)',
-          borderRadius: '12px',
-          padding: '1.75rem 2rem',
-          marginBottom: '4.5rem',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '1.5rem',
-          alignItems: 'center',
-          boxShadow: '0 4px 20px rgba(6, 78, 59, 0.05)'
-        }}>
-          <div>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', color: '#059669', fontSize: '0.78rem', fontWeight: 800, fontFamily: 'var(--font-mono)', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
-              <FileText size={14} />
-              <span>OFFICIAL CANDIDATE BRIEFINGS & RULEBOOK</span>
-            </div>
-            <h3 style={{ fontSize: '1.35rem', color: '#0f2e22', margin: '0 0 0.35rem', fontWeight: 800 }}>
-              Download Competition Architecture & Problem Statements
-            </h3>
-            <p style={{ fontSize: '0.88rem', color: '#4b5563', margin: 0, lineHeight: 1.5 }}>
-              Access the complete evaluation rubric, the "Zero-Black-Box" prompt engineering regulations, and the 5 challenge problem tracks.
-            </p>
-          </div>
-
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.85rem', justifyContent: 'flex-start' }}>
-            <a
-              href="/docs/DevSpark_Official_Rules.pdf"
-              download="DevSpark_Official_Rules_Matrix.pdf"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                background: '#059669',
-                color: '#ffffff',
-                padding: '0.75rem 1.35rem',
-                borderRadius: '6px',
-                fontSize: '0.88rem',
-                fontWeight: 700,
-                textDecoration: 'none',
-                boxShadow: '0 2px 8px rgba(5, 150, 105, 0.25)',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = '#047857'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = '#059669'; }}
-            >
-              <Download size={15} />
-              <span>Rules Matrix (PDF)</span>
-            </a>
-
-            <a
-              href="/docs/DevSpark_Problem_Statements.pdf"
-              download="DevSpark_Problem_Statements.pdf"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                background: '#ffffff',
-                border: '1.5px solid #059669',
-                color: '#059669',
-                padding: '0.75rem 1.35rem',
-                borderRadius: '6px',
-                fontSize: '0.88rem',
-                fontWeight: 700,
-                textDecoration: 'none',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = '#ecfdf5'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = '#ffffff'; }}
-            >
-              <Download size={15} />
-              <span>5 Problem Statements (PDF)</span>
-            </a>
-          </div>
         </div>
 
         {/* Video / Quote Showcase Block */}

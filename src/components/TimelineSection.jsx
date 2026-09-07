@@ -5,60 +5,67 @@ import { TiltCard3D } from './TiltCard3D';
 export const TimelineSection = () => {
   const schedule = [
     {
-      time: '09:00 AM – 09:45 AM',
-      phase: 'Phase 01',
-      title: 'Reporting, Desk Check-in & System Readiness',
-      desc: 'Team badge allocation, BYOD Wi-Fi authentication, and table clustering.',
+      time: '09:30 AM Sharp',
+      phase: 'Check-in',
+      title: 'Reporting & Desk Check-in',
+      desc: 'Team badge allocation, BYOD Wi-Fi authentication, and Auditorium table clustering.',
       color: '#059669'
     },
     {
-      time: '09:45 AM – 10:15 AM',
-      phase: 'Phase 02',
-      title: 'Inauguration & Operational Briefing',
+      time: '10:00 AM – 10:15 AM',
+      phase: 'Briefing',
+      title: 'Operational Briefing',
       desc: 'Opening remarks by HOD (CSE), rulebook overview, and 350-pt scoring guidelines.',
       color: '#047857'
     },
     {
       time: '10:15 AM – 11:00 AM',
-      phase: 'Phase 03',
+      phase: 'Round 01',
       title: 'Round 1: LogicSprint (Aptitude & Tech Assessment)',
-      desc: '40 Objective MCQs (+2.5 / -0.5). Synchronized digital auto-lock at 11:00 AM.',
+      desc: '40 Objective MCQs (+2.5 / -0.5 marking). Synchronized digital auto-lock at 11:00 AM.',
       color: '#059669'
     },
     {
-      time: '11:00 AM – 11:30 AM',
-      phase: 'Phase 04',
-      title: 'Problem Statements Reveal & 5 Track Selection',
-      desc: 'Release of 5 challenge tracks, team strategy alignment, and prompt architecture planning.',
-      color: '#047857'
-    },
-    {
-      time: '11:30 AM – 01:00 PM',
-      phase: 'Phase 05',
-      title: 'Round 2: DevSprint (90-Min AI Prototype Build)',
-      desc: '90-min rapid AI prototype development with Gemini, ChatGPT, Claude, Copilot, v0.',
+      time: '11:00 AM – 11:15 AM',
+      phase: 'Break',
+      title: '15-Minute Refreshment Break',
+      desc: 'Quick breather and preparation for Round 2 prototype showcase.',
       color: '#10b981'
     },
     {
-      time: '01:00 PM – 02:00 PM',
-      phase: 'Phase 06',
-      title: 'Lunch & Mid-Day Networking Break',
-      desc: 'Complimentary lunch for all squads; code freeze & preliminary submission audit.',
+      time: '11:15 AM – 12:00 PM',
+      phase: 'Round 02 • Phase 1',
+      title: 'Round 2: DevSprint Showcase (Phase 1 Demos)',
+      desc: 'All teams showcase their home-built working prototype before the evaluation jury.',
       color: '#059669'
     },
     {
-      time: '02:00 PM – 04:15 PM',
-      phase: 'Phase 07',
-      title: 'Live Stage Demonstrations & Technical Jury Q&A',
-      desc: '3–4 min prototype defense per team evaluated on the 250-pt rubric under the Zero-Black-Box rule.',
+      time: '12:00 PM – 12:15 PM',
+      phase: 'Shortlist',
+      title: '15-Min Break & Top 5–7 Finalists Announcement',
+      desc: 'Jury aggregates preliminary scores and announces the Top 5 to 7 finalist squads.',
       color: '#047857'
     },
     {
-      time: '04:30 PM – 05:15 PM',
-      phase: 'Phase 08',
-      title: 'Valedictory Ceremony & Accolades',
-      desc: 'Announcement of standout teams (Winner Trophies + Official Certificates of Recognition for all).',
+      time: '12:15 PM – 01:15 PM',
+      phase: 'Round 02 • Phase 2',
+      title: 'Round 2: DevSprint Finalist Stage Defense',
+      desc: 'In-depth stage demonstration and technical jury Q&A for the Top 5–7 finalist teams.',
+      color: '#059669'
+    },
+    {
+      time: '01:15 PM – 02:00 PM',
+      phase: 'Lunch',
+      title: 'Lunch Break & Mid-Day Networking',
+      desc: 'Complimentary lunch for all participants; final score compilation.',
       color: '#10b981'
+    },
+    {
+      time: '02:00 PM – 02:30 PM',
+      phase: 'Ceremony',
+      title: 'Valedictory Ceremony & Accolades Distribution',
+      desc: 'Announcement of standout teams, Winner Trophies, and Official Certificates for all attendees.',
+      color: '#047857'
     }
   ];
 
@@ -75,7 +82,7 @@ export const TimelineSection = () => {
             Master Sprint Timeline
           </h2>
           <p style={{ color: '#4b5563', maxWidth: '640px', fontSize: '0.98rem', lineHeight: 1.6 }}>
-            A synchronized single-day schedule from 09:00 AM to 05:15 PM.
+            A synchronized single-day schedule from 09:30 AM to 02:30 PM.
           </p>
         </div>
 

@@ -19,6 +19,10 @@ export const FaqSection = () => {
       a: 'No! DevSpark operates on a 350-point cumulative non-eliminatory model. Every registered team participates in both Round 1 (LogicSprint - 100 Pts) and Round 2 (DevSprint - 250 Pts). Final standings are determined strictly by aggregate score.'
     },
     {
+      q: 'Do teams build the project at home or on the event day?',
+      a: 'Teams build and refine their project prototypes beforehand from home using the official problem tracks and approved AI tools! On the event day, you will take the Round 1 Logic assessment (10:15 AM – 11:00 AM), and then showcase and defend your live working prototype in Round 2 (11:15 AM – 01:15 PM).'
+    },
+    {
       q: 'Are Generative AI tools (ChatGPT, Gemini, Claude, Copilot, Cursor, v0) allowed?',
       a: 'Yes! Generative AI tools are fully authorized for scaffolding, boilerplate generation, and rapid UI/logic synthesis. However, squads must abide by the "Zero-Black-Box" rule (every member must be able to explain the code) and maintain an AI_PROMPT_LOG.md file.'
     },
