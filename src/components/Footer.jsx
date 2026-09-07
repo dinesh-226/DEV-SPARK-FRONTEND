@@ -52,12 +52,11 @@ export const Footer = ({ onOpenAdmin, onOpenRegister }) => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.88rem' }}>
               <a href="#overview" style={{ color: '#4b5563', textDecoration: 'none' }}>What's that?</a>
               <a href="#details" style={{ color: '#4b5563', textDecoration: 'none' }}>2 Sprint Stages & 350-Pt Rubric</a>
-              <a href="#problem-tracks" style={{ color: '#4b5563', textDecoration: 'none' }}>5 Challenge Problem Tracks</a>
               <a href="#schedule" style={{ color: '#4b5563', textDecoration: 'none' }}>Master Timeline (09:00 AM – 05:15 PM)</a>
               <a href="#mentors" style={{ color: '#4b5563', textDecoration: 'none' }}>Mentors & Event Coordinators</a>
               <a href="#faq" style={{ color: '#4b5563', textDecoration: 'none' }}>FAQ & Guidelines</a>
               <a href="/docs/DevSpark_Official_Rules.pdf" download style={{ color: '#059669', textDecoration: 'none', fontWeight: 700 }}>📄 Download Rules Matrix (PDF)</a>
-              <a href="/docs/DevSpark_Problem_Statements.pdf" download style={{ color: '#047857', textDecoration: 'none', fontWeight: 700 }}>📄 Download 5 Problem Tracks (PDF)</a>
+              <a href="/docs/DevSpark_Problem_Statements.pdf" download style={{ color: '#047857', textDecoration: 'none', fontWeight: 700 }}>📄 Download Problem Statements (PDF)</a>
             </div>
           </div>
 

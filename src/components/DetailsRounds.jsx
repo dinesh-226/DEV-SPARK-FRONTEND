@@ -7,7 +7,6 @@ import { TiltCard3D } from './TiltCard3D';
 
 export const DetailsRounds = () => {
   const [activeStageTab, setActiveStageTab] = useState(0);
-  const [activeTrackTab, setActiveTrackTab] = useState(0);
 
   // Score Calculator State (350 Points Model)
   const [r1Correct, setR1Correct] = useState(32);
@@ -56,85 +55,6 @@ export const DetailsRounds = () => {
     }
   ];
 
-  // 5 Official Challenge Problem Statements
-  const problemTracks = [
-    {
-      id: 'track1',
-      num: 'Track 1',
-      title: 'Campus Flow & Resource Optimization',
-      subtitle: 'Real-Time Dynamic Resource Conflict & Slot Optimizer',
-      icon: Layers,
-      color: '#059669',
-      context: 'Campuses face frequent booking clashes over shared facilities (seminar halls, computing labs, A/V gear, sports facilities).',
-      deliverables: [
-        'Interactive venue / slot reservation portal with time-slot selector',
-        'Automated conflict detection engine for instant schedule overlap detection',
-        'Intelligent fallback suggester recommending nearest available open slots/venues',
-        'Admin dashboard with real-time approval, denial, and cancellation controls'
-      ]
-    },
-    {
-      id: 'track2',
-      num: 'Track 2',
-      title: 'Academic & Exam Intelligence',
-      subtitle: "Dynamic Syllabus Parser & Bloom's Taxonomy Quiz Engine",
-      icon: BookOpen,
-      color: '#047857',
-      context: 'Educators and students spend substantial effort converting extensive lecture notes into balanced, multi-tier practice assessments.',
-      deliverables: [
-        'Document intake parser for syllabus notes, markdown files, or structured text',
-        "LLM prompt workflow generating 5–10 questions tiered by Bloom's Taxonomy (Recall, Application, Code Tracing)",
-        'Interactive quiz UI with live countdown timer, instant submission, and rubric scoring',
-        'Downloadable conceptual weakness and strength breakdown summary'
-      ]
-    },
-    {
-      id: 'track3',
-      num: 'Track 3',
-      title: 'Multidisciplinary Peer Collaboration',
-      subtitle: 'SkillBarter — Reciprocal Campus Teammate Matchmaker',
-      icon: Users,
-      color: '#10b981',
-      context: 'Interdisciplinary hackathons require paired technical, creative, and managerial skills, but discovering campus collaborators remains siloed.',
-      deliverables: [
-        'Student profile registry specifying offered strengths and sought partner competencies',
-        'Bilateral compatibility algorithm calculating reciprocal skill match scores',
-        'Instant team formation trigger creating shared collaborative cards and milestone lists',
-        'Categorical filtering across tech, UI/UX design, and product management tags'
-      ]
-    },
-    {
-      id: 'track4',
-      num: 'Track 4',
-      title: 'Student Finance & Smart Campus Living',
-      subtitle: 'CampusSplit & Smart Canteen Expense Balancer',
-      icon: DollarSign,
-      color: '#059669',
-      context: 'Shared expenditures across group food orders, project hardware costs, and hostel utilities create tangled debt cycles.',
-      deliverables: [
-        'Expense-logging engine handling itemized, uneven, and recurring bill splits',
-        'Graph-based debt minimization algorithm minimizing total settlement transactions across N parties',
-        'Dynamic UPI payment link / QR-code settlement generator',
-        'Visual expenditure distribution analytics dashboard'
-      ]
-    },
-    {
-      id: 'track5',
-      num: 'Track 5',
-      title: 'Campus Safety & Emergency Incident Tracker',
-      subtitle: 'SafeCampus — Geo-Tagged Anonymous Alert & Incident Dispatcher',
-      icon: AlertTriangle,
-      color: '#047857',
-      context: 'Prompt reporting of campus infrastructure hazards, medical contingencies, and safety issues requires instantaneous triage and routing.',
-      deliverables: [
-        '10-second rapid incident dispatch form with optional anonymous mode',
-        'Simulated geo-location tagging (e.g., Block A, Lab 3) with urgency priority indicators',
-        'Real-time admin emergency triage desk with dynamic lifecycle statuses ("Dispatched", "Under Review", "Resolved")',
-        'Simulated emergency SOS contact broadcast system'
-      ]
-    }
-  ];
-
   // Official Round 2 Jury Evaluation Rubric (250 Points)
   const rubric = [
     { criterion: '1. Problem Alignment & Practical Utility', max: '60 Pts', desc: 'Direct fidelity to the chosen track; real-world feasibility, campus scalability, and tangible utility.' },
@@ -173,7 +93,7 @@ export const DetailsRounds = () => {
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
           gap: '1.75rem',
-          marginBottom: '4.5rem'
+          marginBottom: '4rem'
         }}>
           {stages.map((stg, idx) => {
             const Icon = stg.icon;
@@ -252,136 +172,81 @@ export const DetailsRounds = () => {
           })}
         </div>
 
-        {/* =========================================================================
-            THE 5 CHALLENGE PROBLEM STATEMENTS EXPLORER
-           ========================================================================= */}
-        <div id="problem-tracks" style={{ marginBottom: '4.5rem' }}>
-          <div style={{ marginBottom: '2rem' }}>
-            <div className="crimson-pill" style={{ marginBottom: '0.5rem' }}>
-              ROUND 2 PROBLEM TRACKS
+        {/* Problem Statements & Framework Official PDF Download Banner */}
+        <div style={{
+          background: '#ffffff',
+          border: '1.5px solid rgba(5, 150, 105, 0.25)',
+          borderRadius: '12px',
+          padding: '1.75rem 2rem',
+          marginBottom: '4.5rem',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '1.5rem',
+          alignItems: 'center',
+          boxShadow: '0 4px 20px rgba(6, 78, 59, 0.05)'
+        }}>
+          <div>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', color: '#059669', fontSize: '0.78rem', fontWeight: 800, fontFamily: 'var(--font-mono)', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
+              <FileText size={14} />
+              <span>OFFICIAL PROBLEM STATEMENTS & FRAMEWORK</span>
             </div>
-            <h3 style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.3rem)', color: '#0f2e22', margin: '0 0 0.35rem', fontWeight: 800 }}>
-              The 5 Challenge Problem Statements
+            <h3 style={{ fontSize: '1.3rem', color: '#0f2e22', margin: '0 0 0.35rem', fontWeight: 800 }}>
+              Round 2 Challenge Problem Statements & AI Prompt Guidelines
             </h3>
-            <p style={{ color: '#4b5563', fontSize: '0.92rem', margin: 0 }}>
-              Each team selects exactly one track at the start of the 90-minute build window. Explore the mandatory core deliverables:
+            <p style={{ fontSize: '0.88rem', color: '#4b5563', margin: 0, lineHeight: 1.5 }}>
+              Download the official PDF document to review the complete challenge statements, mandatory deliverables, and prompt engineering protocols.
             </p>
           </div>
 
-          {/* Track Tabs */}
-          <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '0.65rem',
-            marginBottom: '1.5rem'
-          }}>
-            {problemTracks.map((trk, idx) => (
-              <button
-                key={trk.id}
-                onClick={() => setActiveTrackTab(idx)}
-                style={{
-                  background: activeTrackTab === idx ? '#059669' : '#ffffff',
-                  color: activeTrackTab === idx ? '#ffffff' : '#0f2e22',
-                  border: activeTrackTab === idx ? '1px solid #059669' : '1px solid rgba(5, 150, 105, 0.2)',
-                  borderRadius: '6px',
-                  padding: '0.6rem 1.15rem',
-                  fontSize: '0.85rem',
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  boxShadow: activeTrackTab === idx ? '0 2px 10px rgba(5, 150, 105, 0.25)' : 'none'
-                }}
-              >
-                {trk.num}: {trk.title.split('&')[0]}
-              </button>
-            ))}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.85rem' }}>
+            <a
+              href="/docs/DevSpark_Problem_Statements.pdf"
+              download="DevSpark_Problem_Statements.pdf"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                background: '#059669',
+                color: '#ffffff',
+                padding: '0.75rem 1.35rem',
+                borderRadius: '6px',
+                fontSize: '0.88rem',
+                fontWeight: 700,
+                textDecoration: 'none',
+                boxShadow: '0 2px 8px rgba(5, 150, 105, 0.25)',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = '#047857'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = '#059669'; }}
+            >
+              <Download size={15} />
+              <span>Download Problem Statements (PDF)</span>
+            </a>
+
+            <a
+              href="/docs/DevSpark_Official_Rules.pdf"
+              download="DevSpark_Official_Rules_Matrix.pdf"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                background: '#ffffff',
+                border: '1.5px solid #059669',
+                color: '#059669',
+                padding: '0.75rem 1.35rem',
+                borderRadius: '6px',
+                fontSize: '0.88rem',
+                fontWeight: 700,
+                textDecoration: 'none',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = '#ecfdf5'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = '#ffffff'; }}
+            >
+              <Download size={15} />
+              <span>Rules & Rubric Matrix (PDF)</span>
+            </a>
           </div>
-
-          {/* Active Track Highlight Box */}
-          {(() => {
-            const trk = problemTracks[activeTrackTab];
-            const Icon = trk.icon;
-            return (
-              <TiltCard3D
-                maxTilt={4}
-                style={{
-                  background: '#ffffff',
-                  border: '1.5px solid rgba(5, 150, 105, 0.25)',
-                  borderRadius: '12px',
-                  padding: '2.25rem',
-                  boxShadow: '0 6px 25px rgba(6, 78, 59, 0.06)'
-                }}
-              >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
-                  <div>
-                    <span style={{ fontSize: '0.8rem', color: trk.color, fontWeight: 800, fontFamily: 'var(--font-mono)', textTransform: 'uppercase' }}>
-                      {trk.num} • 90-MINUTE DEV SPRINT TRACK
-                    </span>
-                    <h4 style={{ fontSize: '1.6rem', color: '#0f2e22', margin: '0.2rem 0 0.35rem', fontWeight: 800 }}>
-                      {trk.title}
-                    </h4>
-                    <div style={{ fontSize: '1rem', color: trk.color, fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
-                      {trk.subtitle}
-                    </div>
-                  </div>
-
-                  <a
-                    href="/docs/DevSpark_Problem_Statements.pdf"
-                    download="DevSpark_Problem_Statements.pdf"
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.45rem',
-                      background: '#ecfdf5',
-                      border: '1px solid #059669',
-                      color: '#059669',
-                      padding: '0.55rem 1rem',
-                      borderRadius: '6px',
-                      fontSize: '0.82rem',
-                      fontWeight: 700,
-                      textDecoration: 'none'
-                    }}
-                  >
-                    <Download size={14} />
-                    <span>Download Full Briefing (PDF)</span>
-                  </a>
-                </div>
-
-                <div style={{ background: '#f4f8f6', padding: '1rem 1.25rem', borderRadius: '8px', borderLeft: `4px solid ${trk.color}`, marginBottom: '1.75rem', fontSize: '0.92rem', color: '#374151', lineHeight: 1.6 }}>
-                  <strong>Context & Problem Challenge:</strong> {trk.context}
-                </div>
-
-                <div>
-                  <h5 style={{ fontSize: '0.95rem', color: '#0f2e22', fontWeight: 800, textTransform: 'uppercase', fontFamily: 'var(--font-mono)', marginBottom: '0.85rem' }}>
-                    Mandatory Core Deliverables:
-                  </h5>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '0.85rem' }}>
-                    {trk.deliverables.map((item, i) => (
-                      <div
-                        key={i}
-                        style={{
-                          background: '#ffffff',
-                          border: '1px solid rgba(5, 150, 105, 0.15)',
-                          borderRadius: '6px',
-                          padding: '0.85rem 1rem',
-                          display: 'flex',
-                          alignItems: 'flex-start',
-                          gap: '0.65rem'
-                        }}
-                      >
-                        <span style={{ color: trk.color, fontWeight: 800, fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>
-                          0{i + 1}.
-                        </span>
-                        <span style={{ fontSize: '0.86rem', color: '#1f2937', lineHeight: 1.45 }}>
-                          {item}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </TiltCard3D>
-            );
-          })()}
         </div>
 
         {/* =========================================================================
