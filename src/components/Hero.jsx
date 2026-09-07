@@ -1,6 +1,6 @@
 import React from 'react';
 import { IsometricHeroArt } from './IsometricHeroArt';
-import { MapPin, Calendar, Award, ArrowRight, Sparkles } from 'lucide-react';
+import { MapPin, Calendar, Award, ArrowRight, Sparkles, FileText, Download, Layers, ShieldCheck } from 'lucide-react';
 
 export const Hero = ({ onRegisterClick }) => {
   return (
@@ -59,32 +59,85 @@ export const Hero = ({ onRegisterClick }) => {
               gap: '0.5rem',
               alignItems: 'center'
             }}>
-              <span style={{ color: '#059669' }}>Logic</span>
+              <span style={{ color: '#059669' }}>LogicSprint</span>
               <span style={{ color: '#9ca3af' }}>|</span>
-              <span style={{ color: '#047857' }}>Diagnostics</span>
+              <span style={{ color: '#047857' }}>DevSprint</span>
               <span style={{ color: '#9ca3af' }}>|</span>
               <span style={{ color: '#10b981' }}>AI Prototyping</span>
               <span style={{ color: '#9ca3af' }}>|</span>
-              <span style={{ color: '#064e3b' }}>Defense</span>
+              <span style={{ color: '#064e3b' }}>Live Defense</span>
             </div>
 
             <p style={{
               fontSize: '0.98rem',
               color: '#4b5563',
               lineHeight: 1.65,
-              maxWidth: '455px',
-              marginBottom: '2rem'
+              maxWidth: '475px',
+              marginBottom: '1.75rem'
             }}>
-              Join us to discover new ways to build and innovate. A multidisciplinary 500-point sprint bridging foundational logic, problem diagnostics, and generative AI prototypes by Team Stack Tracers at ABIET Pathankot.
+              Join us to discover new ways to build and innovate. A multidisciplinary 350-point sprint bridging foundational algorithmic logic (40 MCQs) and rapid AI prototype solution builds by Team Stack Tracers at ABIET Pathankot.
             </p>
 
-            <button
-              onClick={onRegisterClick}
-              className="btn-dribbble btn-dribbble-primary"
-              style={{ padding: '0.9rem 2.5rem', fontSize: '1.05rem' }}
-            >
-              <span>Register</span>
-            </button>
+            {/* CTA & Official Document Download Buttons */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center', marginBottom: '1rem' }}>
+              <button
+                onClick={onRegisterClick}
+                className="btn-dribbble btn-dribbble-primary"
+                style={{ padding: '0.85rem 2.25rem', fontSize: '1rem' }}
+              >
+                <span>Register Team</span>
+              </button>
+
+              <a
+                href="/docs/DevSpark_Official_Rules.pdf"
+                download="DevSpark_Official_Rules_Matrix.pdf"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.45rem',
+                  background: '#ffffff',
+                  border: '1px solid rgba(5, 150, 105, 0.3)',
+                  color: '#059669',
+                  padding: '0.8rem 1.25rem',
+                  borderRadius: '6px',
+                  fontSize: '0.88rem',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  boxShadow: '0 1px 4px rgba(6, 78, 59, 0.05)',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = '#ecfdf5'; e.currentTarget.style.borderColor = '#059669'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = '#ffffff'; e.currentTarget.style.borderColor = 'rgba(5, 150, 105, 0.3)'; }}
+              >
+                <Download size={15} />
+                <span>Rules Matrix (PDF)</span>
+              </a>
+
+              <a
+                href="/docs/DevSpark_Problem_Statements.pdf"
+                download="DevSpark_Problem_Statements.pdf"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.45rem',
+                  background: '#ffffff',
+                  border: '1px solid rgba(5, 150, 105, 0.3)',
+                  color: '#047857',
+                  padding: '0.8rem 1.25rem',
+                  borderRadius: '6px',
+                  fontSize: '0.88rem',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  boxShadow: '0 1px 4px rgba(6, 78, 59, 0.05)',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = '#ecfdf5'; e.currentTarget.style.borderColor = '#047857'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = '#ffffff'; e.currentTarget.style.borderColor = 'rgba(5, 150, 105, 0.3)'; }}
+              >
+                <FileText size={15} />
+                <span>Problem Statements (PDF)</span>
+              </a>
+            </div>
           </div>
 
           {/* Right Column: Isometric Line-Art Illustration */}
@@ -170,31 +223,31 @@ export const Hero = ({ onRegisterClick }) => {
             </div>
           </div>
 
-          {/* 3. Where? Column */}
+          {/* 3. Format & Scoring Column */}
           <div>
             <div style={{ color: '#047857', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', fontFamily: 'var(--font-mono)', marginBottom: '0.4rem' }}>
-              Where?
+              Architecture
             </div>
             <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f2e22', lineHeight: 1.3 }}>
-              Main Auditorium <br />
-              B.Tech Building, ABIET
+              2 Sprint Stages <br />
+              350-Pt Cumulative
             </div>
             <div style={{ fontSize: '0.85rem', color: '#4b5563', marginTop: '0.25rem' }}>
-              Kotli, Pathankot (Punjab)
+              Round 1 (100 Pts) + Round 2 (250 Pts)
             </div>
           </div>
 
-          {/* 4. Awards? Column */}
+          {/* 4. Team Standards Column */}
           <div>
             <div style={{ color: '#10b981', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', fontFamily: 'var(--font-mono)', marginBottom: '0.4rem' }}>
-              Awards?
+              Team Size
             </div>
             <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f2e22', lineHeight: 1.3 }}>
-              ₹19,000 Cash Pool <br />
-              + Top 3 Trophies
+              2 to 3 Members <br />
+              Multidisciplinary
             </div>
             <div style={{ fontSize: '0.85rem', color: '#4b5563', marginTop: '0.25rem' }}>
-              100% Certified for All
+              100% Certified for All Teams
             </div>
           </div>
 

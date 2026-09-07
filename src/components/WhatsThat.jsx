@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Layers, Laptop, Cpu, Trophy, Play, Users, Coffee, Clock, ArrowRight } from 'lucide-react';
+import { Layers, Laptop, Cpu, Trophy, Play, Users, Coffee, Clock, ArrowRight, Download, FileText, CheckCircle2 } from 'lucide-react';
 import { TiltCard3D } from './TiltCard3D';
 
 export const WhatsThat = ({ onRegisterClick }) => {
@@ -8,9 +8,9 @@ export const WhatsThat = ({ onRegisterClick }) => {
   const features = [
     {
       num: '01',
-      title: '500-Pt Cumulative',
+      title: '350-Pt Cumulative',
       subtitle: 'Zero Mid-Event Elimination',
-      desc: 'All teams participate across all 3 rounds. Standings are determined strictly by aggregate score at the final ceremony.',
+      desc: 'All teams participate across both Round 1 (LogicSprint) and Round 2 (DevSprint). Standings are determined strictly by aggregate score at the valedictory ceremony.',
       color: '#059669' // Emerald Green
     },
     {
@@ -24,14 +24,14 @@ export const WhatsThat = ({ onRegisterClick }) => {
       num: '03',
       title: 'AI Tools Permitted',
       subtitle: 'Rapid Prototype Scaffolding',
-      desc: 'Leverage Gemini, ChatGPT, Claude, GitHub Copilot, and v0 during Round 3 for fast ideation, architecture, and coding.',
+      desc: 'Generative AI tools (ChatGPT, Gemini, Claude, GitHub Copilot, v0, Cursor) are fully authorized for boilerplate, UI synthesis, and scaffolding.',
       color: '#10b981' // Mint Bright Green
     },
     {
       num: '04',
-      title: '₹19,000 Cash Pool',
-      subtitle: 'Top 3 Winning Teams',
-      desc: '1st: ₹10,000 • 2nd: ₹5,500 • 3rd: ₹3,500 + Winner Trophies + Official Certificates of Participation for every attendee.',
+      title: 'Official Recognition',
+      subtitle: 'Trophies & Accolades',
+      desc: 'Standout winner trophies for top teams + Official Department Certificates of Participation awarded to every attendee by CSE Dept, ABIET.',
       color: '#064e3b' // Deep Emerald
     }
   ];
@@ -39,8 +39,8 @@ export const WhatsThat = ({ onRegisterClick }) => {
   const highlights = [
     {
       icon: Users,
-      title: 'Join as a Team',
-      desc: 'Form multidisciplinary squads of 2 to 5 members across departments.',
+      title: 'Teams of 2 to 3 Members',
+      desc: 'Form multidisciplinary squads of 2 to 3 members. Solo participation is prohibited.',
       color: '#059669'
     },
     {
@@ -147,6 +147,83 @@ export const WhatsThat = ({ onRegisterClick }) => {
               </div>
             </TiltCard3D>
           ))}
+        </div>
+
+        {/* Official Document Downloads Banner */}
+        <div style={{
+          background: 'linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%)',
+          border: '1.5px solid rgba(5, 150, 105, 0.25)',
+          borderRadius: '12px',
+          padding: '1.75rem 2rem',
+          marginBottom: '4.5rem',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '1.5rem',
+          alignItems: 'center',
+          boxShadow: '0 4px 20px rgba(6, 78, 59, 0.05)'
+        }}>
+          <div>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', color: '#059669', fontSize: '0.78rem', fontWeight: 800, fontFamily: 'var(--font-mono)', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
+              <FileText size={14} />
+              <span>OFFICIAL CANDIDATE BRIEFINGS & RULEBOOK</span>
+            </div>
+            <h3 style={{ fontSize: '1.35rem', color: '#0f2e22', margin: '0 0 0.35rem', fontWeight: 800 }}>
+              Download Competition Architecture & Problem Statements
+            </h3>
+            <p style={{ fontSize: '0.88rem', color: '#4b5563', margin: 0, lineHeight: 1.5 }}>
+              Access the complete evaluation rubric, the "Zero-Black-Box" prompt engineering regulations, and the 5 challenge problem tracks.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.85rem', justifyContent: 'flex-start' }}>
+            <a
+              href="/docs/DevSpark_Official_Rules.pdf"
+              download="DevSpark_Official_Rules_Matrix.pdf"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                background: '#059669',
+                color: '#ffffff',
+                padding: '0.75rem 1.35rem',
+                borderRadius: '6px',
+                fontSize: '0.88rem',
+                fontWeight: 700,
+                textDecoration: 'none',
+                boxShadow: '0 2px 8px rgba(5, 150, 105, 0.25)',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = '#047857'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = '#059669'; }}
+            >
+              <Download size={15} />
+              <span>Rules Matrix (PDF)</span>
+            </a>
+
+            <a
+              href="/docs/DevSpark_Problem_Statements.pdf"
+              download="DevSpark_Problem_Statements.pdf"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                background: '#ffffff',
+                border: '1.5px solid #059669',
+                color: '#059669',
+                padding: '0.75rem 1.35rem',
+                borderRadius: '6px',
+                fontSize: '0.88rem',
+                fontWeight: 700,
+                textDecoration: 'none',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = '#ecfdf5'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = '#ffffff'; }}
+            >
+              <Download size={15} />
+              <span>5 Problem Statements (PDF)</span>
+            </a>
+          </div>
         </div>
 
         {/* Video / Quote Showcase Block */}

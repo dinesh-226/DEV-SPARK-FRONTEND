@@ -48,14 +48,16 @@ export const Footer = ({ onOpenAdmin, onOpenRegister }) => {
 
           {/* 2. Quick Links */}
           <div>
-            <h4 style={{ fontSize: '0.95rem', color: '#0f2e22', marginBottom: '1rem', fontWeight: 700 }}>Navigation</h4>
+            <h4 style={{ fontSize: '0.95rem', color: '#0f2e22', marginBottom: '1rem', fontWeight: 700 }}>Navigation & Docs</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.88rem' }}>
               <a href="#overview" style={{ color: '#4b5563', textDecoration: 'none' }}>What's that?</a>
-              <a href="#details" style={{ color: '#4b5563', textDecoration: 'none' }}>3 Sprint Tracks</a>
+              <a href="#details" style={{ color: '#4b5563', textDecoration: 'none' }}>2 Sprint Stages & 350-Pt Rubric</a>
+              <a href="#problem-tracks" style={{ color: '#4b5563', textDecoration: 'none' }}>5 Challenge Problem Tracks</a>
               <a href="#schedule" style={{ color: '#4b5563', textDecoration: 'none' }}>Master Timeline (09:00 AM – 05:15 PM)</a>
-              <a href="#prizes" style={{ color: '#4b5563', textDecoration: 'none' }}>₹19,000 Prize Pool</a>
               <a href="#mentors" style={{ color: '#4b5563', textDecoration: 'none' }}>Mentors & Event Coordinators</a>
               <a href="#faq" style={{ color: '#4b5563', textDecoration: 'none' }}>FAQ & Guidelines</a>
+              <a href="/docs/DevSpark_Official_Rules.pdf" download style={{ color: '#059669', textDecoration: 'none', fontWeight: 700 }}>📄 Download Rules Matrix (PDF)</a>
+              <a href="/docs/DevSpark_Problem_Statements.pdf" download style={{ color: '#047857', textDecoration: 'none', fontWeight: 700 }}>📄 Download 5 Problem Tracks (PDF)</a>
             </div>
           </div>
 
@@ -64,36 +66,10 @@ export const Footer = ({ onOpenAdmin, onOpenRegister }) => {
             <h4 style={{ fontSize: '0.95rem', color: '#0f2e22', marginBottom: '1rem', fontWeight: 700 }}>Contact & Helpdesk</h4>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              {/* Faculty Contact for Other Colleges */}
-              <div style={{ background: '#ffffff', border: '1px solid rgba(5, 150, 105, 0.3)', borderRadius: '8px', padding: '0.75rem' }}>
-                <div style={{ fontSize: '0.72rem', color: '#059669', fontWeight: 800, fontFamily: 'var(--font-mono)', marginBottom: '0.25rem' }}>
-                  ★ OTHER COLLEGES & FACULTY QUERY
-                </div>
-                <a
-                  href="tel:6239760625"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.45rem',
-                    color: '#0f2e22',
-                    textDecoration: 'none',
-                    fontSize: '0.92rem',
-                    fontWeight: 800,
-                    fontFamily: 'var(--font-mono)'
-                  }}
-                >
-                  <Phone size={15} color="#059669" />
-                  <span>+91 62397 60625</span>
-                </a>
-                <div style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '0.2rem' }}>
-                  Mr. Vivek Sir (TPO Sir)
-                </div>
-              </div>
-
               {/* Student Helplines */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                <div style={{ fontSize: '0.75rem', color: '#4b5563', fontWeight: 600 }}>
-                  Student Coordinators:
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <div style={{ fontSize: '0.8rem', color: '#4b5563', fontWeight: 700 }}>
+                  Student Event Coordinators:
                 </div>
                 <a
                   href="tel:9464495638"
@@ -184,7 +160,7 @@ export const Footer = ({ onOpenAdmin, onOpenRegister }) => {
             © 2026 DevSpark • Department of Computer Science & Engineering, ABIET Pathankot. All rights reserved.
           </div>
           <div>
-            Other Colleges Helpline: +91 62397 60625
+            Event Helpline: +91 94644 95638
           </div>
         </div>
       </div>

@@ -68,8 +68,7 @@ export const fetchStatsAPI = async () => {
         totalTeams: 0,
         totalParticipants: 0,
         verifiedTeams: 0,
-        maxPrizePool: '₹19,000',
-        totalPoints: 500
+        totalPoints: 350
       }
     };
   }

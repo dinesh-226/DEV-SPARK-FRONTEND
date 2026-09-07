@@ -1,66 +1,154 @@
 import React, { useState } from 'react';
-import { Terminal, Bug, Cpu, Clock, CheckCircle2, ArrowRight } from 'lucide-react';
+import { 
+  Terminal, Cpu, Clock, CheckCircle2, ArrowRight, Download, 
+  FileText, Shield, Sparkles, Layers, BookOpen, Users, DollarSign, AlertTriangle, Code, Award
+} from 'lucide-react';
 import { TiltCard3D } from './TiltCard3D';
 
 export const DetailsRounds = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeStageTab, setActiveStageTab] = useState(0);
+  const [activeTrackTab, setActiveTrackTab] = useState(0);
 
-  // Score Calculator State
+  // Score Calculator State (350 Points Model)
   const [r1Correct, setR1Correct] = useState(32);
   const [r1Incorrect, setR1Incorrect] = useState(4);
-  const [r2Score, setR2Score] = useState(120);
-  const [r3Score, setR3Score] = useState(210);
+  const [r2Score, setR2Score] = useState(210);
 
   const r1Calculated = Math.max(0, Math.min(100, (r1Correct * 2.5) - (r1Incorrect * 0.5)));
-  const totalScore = Math.round((r1Calculated + r2Score + r3Score) * 10) / 10;
-  const percentage = Math.round((totalScore / 500) * 100);
+  const totalScore = Math.round((r1Calculated + r2Score) * 10) / 10;
+  const percentage = Math.round((totalScore / 350) * 100);
 
-  const tracks = [
+  // 2 Official Competition Stages (100 Pts + 250 Pts = 350 Pts Total)
+  const stages = [
     {
       id: 'round1',
-      tag: 'TRACK 01',
+      tag: 'STAGE 01',
       title: 'Round 1: LogicSprint',
       points: '100 Points',
       time: '10:15 AM – 11:00 AM (45 Mins)',
       color: '#059669', // Emerald Green
       icon: Terminal,
-      desc: 'Synchronized digital challenge testing algorithmic logic, pseudo-code tracing, data reasoning, and modern AI/Cloud fundamentals.',
+      desc: 'Synchronized digital aptitude and core tech assessment testing algorithmic logic, pseudocode tracing, data reasoning, and modern AI/Cloud fundamentals.',
       details: [
-        '40 Objective & Multiple-Choice Questions',
-        '+2.5 Points for correct answer | -0.5 Points penalty for incorrect answer',
-        'Automated digital leaderboard freeze at 11:00 AM sharp'
+        '40 Objective Multiple-Choice Questions (MCQs)',
+        '+2.5 Points for correct answer | -0.5 Points penalty for incorrect answer | 0.0 Unattempted',
+        'Automated Apps Script trigger auto-locks submission form at T + 45 minutes sharp',
+        'Exactly one submission form per team submitted from the designated Team Leader device',
+        'No external tabs, cross-table consulting, or outside communication permitted during active quiz'
       ]
     },
     {
       id: 'round2',
-      tag: 'TRACK 02',
-      title: 'Round 2: BugHunt Diagnostics',
-      points: '150 Points',
-      time: '11:15 AM – 12:30 PM (75 Mins)',
+      tag: 'STAGE 02',
+      title: 'Round 2: DevSprint (AI-Augmented)',
+      points: '250 Points',
+      time: '11:30 AM – 04:15 PM (90 Mins Build + Stage Defense)',
       color: '#047857', // Forest Green
-      icon: Bug,
-      desc: 'Hands-on debugging and error-resolution sprint across Python, C++, Java, and JavaScript against automated hidden test suites.',
+      icon: Cpu,
+      desc: 'Translate one chosen challenge problem statement into a functional, user-centric prototype utilizing approved Generative AI assistants with live jury stage defense.',
       details: [
-        'Tier 1 (30 Pts): Structural & syntax inconsistencies',
-        'Tier 2 (50 Pts): Logical breaks, index faults & infinite loops',
-        'Tier 3 (70 Pts): Multi-component call stack diagnostics & root-cause isolation'
+        '5 Challenge Tracks: Squads select exactly 1 track at the start; switching tracks mid-way is forbidden',
+        'AI Tooling Approved: ChatGPT, Gemini, Claude, GitHub Copilot, v0, Cursor & agentic code editors',
+        'The "Zero-Black-Box" Rule: Every member must explain component logic, state handlers, and APIs without rote copy-pasting',
+        'Mandatory Prompt Logging: Submit an AI_PROMPT_LOG.md with the top 3–5 system and scaffolding prompts',
+        'Live Dynamic Execution: Prototypes must execute live with reactive inputs (0 pts for static Figma/wireframes)'
+      ]
+    }
+  ];
+
+  // 5 Official Challenge Problem Statements
+  const problemTracks = [
+    {
+      id: 'track1',
+      num: 'Track 1',
+      title: 'Campus Flow & Resource Optimization',
+      subtitle: 'Real-Time Dynamic Resource Conflict & Slot Optimizer',
+      icon: Layers,
+      color: '#059669',
+      context: 'Campuses face frequent booking clashes over shared facilities (seminar halls, computing labs, A/V gear, sports facilities).',
+      deliverables: [
+        'Interactive venue / slot reservation portal with time-slot selector',
+        'Automated conflict detection engine for instant schedule overlap detection',
+        'Intelligent fallback suggester recommending nearest available open slots/venues',
+        'Admin dashboard with real-time approval, denial, and cancellation controls'
       ]
     },
     {
-      id: 'round3',
-      tag: 'TRACK 03',
-      title: 'Round 3: DevSprint (AI-Augmented)',
-      points: '250 Points',
-      time: '01:30 PM – 04:15 PM (Build & Demos)',
-      color: '#10b981', // Mint Bright Green
-      icon: Cpu,
-      desc: 'Translate on-the-spot problem statements into functional, user-centric prototypes using approved Generative AI assistants with live stage defense.',
-      details: [
-        'AI Approval: Gemini, ChatGPT, Claude, GitHub Copilot, v0 fully approved',
-        'Timeline: 90 mins build + 15 mins code freeze + 3–4 min stage demo before Jury',
-        '250-Pt Rubric: Impact (60 Pts), Working Code (70 Pts), AI Mastery (40 Pts), UI/UX (40 Pts), Defense (40 Pts)'
+      id: 'track2',
+      num: 'Track 2',
+      title: 'Academic & Exam Intelligence',
+      subtitle: "Dynamic Syllabus Parser & Bloom's Taxonomy Quiz Engine",
+      icon: BookOpen,
+      color: '#047857',
+      context: 'Educators and students spend substantial effort converting extensive lecture notes into balanced, multi-tier practice assessments.',
+      deliverables: [
+        'Document intake parser for syllabus notes, markdown files, or structured text',
+        "LLM prompt workflow generating 5–10 questions tiered by Bloom's Taxonomy (Recall, Application, Code Tracing)",
+        'Interactive quiz UI with live countdown timer, instant submission, and rubric scoring',
+        'Downloadable conceptual weakness and strength breakdown summary'
+      ]
+    },
+    {
+      id: 'track3',
+      num: 'Track 3',
+      title: 'Multidisciplinary Peer Collaboration',
+      subtitle: 'SkillBarter — Reciprocal Campus Teammate Matchmaker',
+      icon: Users,
+      color: '#10b981',
+      context: 'Interdisciplinary hackathons require paired technical, creative, and managerial skills, but discovering campus collaborators remains siloed.',
+      deliverables: [
+        'Student profile registry specifying offered strengths and sought partner competencies',
+        'Bilateral compatibility algorithm calculating reciprocal skill match scores',
+        'Instant team formation trigger creating shared collaborative cards and milestone lists',
+        'Categorical filtering across tech, UI/UX design, and product management tags'
+      ]
+    },
+    {
+      id: 'track4',
+      num: 'Track 4',
+      title: 'Student Finance & Smart Campus Living',
+      subtitle: 'CampusSplit & Smart Canteen Expense Balancer',
+      icon: DollarSign,
+      color: '#059669',
+      context: 'Shared expenditures across group food orders, project hardware costs, and hostel utilities create tangled debt cycles.',
+      deliverables: [
+        'Expense-logging engine handling itemized, uneven, and recurring bill splits',
+        'Graph-based debt minimization algorithm minimizing total settlement transactions across N parties',
+        'Dynamic UPI payment link / QR-code settlement generator',
+        'Visual expenditure distribution analytics dashboard'
+      ]
+    },
+    {
+      id: 'track5',
+      num: 'Track 5',
+      title: 'Campus Safety & Emergency Incident Tracker',
+      subtitle: 'SafeCampus — Geo-Tagged Anonymous Alert & Incident Dispatcher',
+      icon: AlertTriangle,
+      color: '#047857',
+      context: 'Prompt reporting of campus infrastructure hazards, medical contingencies, and safety issues requires instantaneous triage and routing.',
+      deliverables: [
+        '10-second rapid incident dispatch form with optional anonymous mode',
+        'Simulated geo-location tagging (e.g., Block A, Lab 3) with urgency priority indicators',
+        'Real-time admin emergency triage desk with dynamic lifecycle statuses ("Dispatched", "Under Review", "Resolved")',
+        'Simulated emergency SOS contact broadcast system'
       ]
     }
+  ];
+
+  // Official Round 2 Jury Evaluation Rubric (250 Points)
+  const rubric = [
+    { criterion: '1. Problem Alignment & Practical Utility', max: '60 Pts', desc: 'Direct fidelity to the chosen track; real-world feasibility, campus scalability, and tangible utility.' },
+    { criterion: '2. Functional Architecture & System Stability', max: '70 Pts', desc: 'Crash-free live execution; robust input validation, modular architecture, and error handling resilience.' },
+    { criterion: '3. AI Tool Orchestration & Prompt Mastery', max: '40 Pts', desc: 'Methodical multi-turn prompting demonstrated in AI_PROMPT_LOG.md; sophisticated prompt engineering vs superficial copy-pasting.' },
+    { criterion: '4. UI/UX Design & User Experience', max: '40 Pts', desc: 'Visual polish, layout responsiveness, intuitive information hierarchy, and cognitive ease for end users.' },
+    { criterion: '5. Technical Defense & Live Q&A', max: '40 Pts', desc: 'Clarity and precision during jury cross-examination; technical depth, team balance, and defense of architectural trade-offs.' }
+  ];
+
+  // Technical Deliverables
+  const deliverables = [
+    { title: '1. Working Source Code', desc: 'Complete source repository (Web application, Mobile client, or CLI tool) containing all components required for execution.' },
+    { title: '2. README.md', desc: 'Clear, step-by-step instructions to install dependencies and run the project locally, or a working hosted link (Vercel, Streamlit, Netlify).' },
+    { title: '3. AI_PROMPT_LOG.md', desc: 'A transparent log containing 3–5 primary system, architecture, or logic prompts used across the build to verify prompt engineering proficiency.' }
   ];
 
   return (
@@ -70,38 +158,38 @@ export const DetailsRounds = () => {
         {/* Section Header */}
         <div style={{ marginBottom: '3rem' }}>
           <div className="crimson-pill" style={{ marginBottom: '0.6rem' }}>
-            DETAILS & ROUNDS
+            OFFICIAL COMPETITION ARCHITECTURE
           </div>
           <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', color: '#0f2e22', marginBottom: '0.5rem' }}>
-            3-Stage Sprint Tracks
+            2-Stage Sprint & Evaluation Matrix
           </h2>
-          <p style={{ color: '#4b5563', maxWidth: '640px', fontSize: '0.98rem', lineHeight: 1.6 }}>
-            500 cumulative points across algorithmic logic, code diagnostics, and AI working prototypes.
+          <p style={{ color: '#4b5563', maxWidth: '680px', fontSize: '0.98rem', lineHeight: 1.6 }}>
+            A cumulative 350-point framework comprising Round 1 LogicSprint (100 Pts) and Round 2 DevSprint (250 Pts) governed by the official Department evaluation rubric.
           </p>
         </div>
 
-        {/* 3 Tracks Cards on Pure White Cards */}
+        {/* 2 Stage Sprint Overview Cards */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '1.5rem',
-          marginBottom: '3.5rem'
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '1.75rem',
+          marginBottom: '4.5rem'
         }}>
-          {tracks.map((trk, idx) => {
-            const Icon = trk.icon;
-            const isSelected = activeTab === idx;
+          {stages.map((stg, idx) => {
+            const Icon = stg.icon;
+            const isSelected = activeStageTab === idx;
             return (
               <TiltCard3D
-                key={trk.id}
-                onClick={() => setActiveTab(idx)}
+                key={stg.id}
+                onClick={() => setActiveStageTab(idx)}
                 className="dribbble-card"
-                maxTilt={12}
+                maxTilt={8}
                 style={{
                   cursor: 'pointer',
-                  border: isSelected ? `2px solid ${trk.color}` : '1px solid rgba(5, 150, 105, 0.15)',
+                  border: isSelected ? `2px solid ${stg.color}` : '1px solid rgba(5, 150, 105, 0.18)',
                   background: '#ffffff',
-                  borderTop: `3.5px solid ${trk.color}`,
-                  boxShadow: isSelected ? `0 12px 30px ${trk.color}25` : '0 4px 15px rgba(6, 78, 59, 0.05)'
+                  borderTop: `4px solid ${stg.color}`,
+                  boxShadow: isSelected ? `0 12px 30px ${stg.color}25` : '0 4px 15px rgba(6, 78, 59, 0.05)'
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
@@ -113,58 +201,290 @@ export const DetailsRounds = () => {
                     fontSize: '0.72rem',
                     fontWeight: 700,
                     fontFamily: 'var(--font-mono)',
-                    background: `${trk.color}14`,
-                    color: trk.color,
-                    border: `1px solid ${trk.color}35`
+                    background: `${stg.color}14`,
+                    color: stg.color,
+                    border: `1px solid ${stg.color}35`
                   }}>
-                    {trk.tag}
+                    {stg.tag}
                   </span>
-                  <span style={{ fontSize: '0.85rem', color: trk.color, fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
-                    {trk.points}
+                  <span style={{ fontSize: '1rem', color: stg.color, fontWeight: 800, fontFamily: 'var(--font-mono)' }}>
+                    {stg.points}
                   </span>
                 </div>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.85rem' }}>
                   <div style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: '6px',
-                    background: `${trk.color}14`,
-                    border: `1px solid ${trk.color}35`,
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: '8px',
+                    background: `${stg.color}14`,
+                    border: `1px solid ${stg.color}35`,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: trk.color
+                    color: stg.color
                   }}>
-                    <Icon size={20} />
+                    <Icon size={22} />
                   </div>
-                  <h3 style={{ fontSize: '1.25rem', color: '#0f2e22', margin: 0 }}>
-                    {trk.title.split(':')[1]}
+                  <h3 style={{ fontSize: '1.3rem', color: '#0f2e22', margin: 0, fontWeight: 800 }}>
+                    {stg.title}
                   </h3>
                 </div>
 
-                <p style={{ fontSize: '0.88rem', color: '#4b5563', lineHeight: 1.6, marginBottom: '1.25rem' }}>
-                  {trk.desc}
+                <p style={{ fontSize: '0.9rem', color: '#4b5563', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+                  {stg.desc}
                 </p>
 
-                <div style={{ borderTop: '1px solid rgba(5, 150, 105, 0.08)', paddingTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  {trk.details.map((d, i) => (
-                    <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.82rem', color: '#1f2937' }}>
-                      <CheckCircle2 size={14} color={trk.color} style={{ flexShrink: 0, marginTop: '0.2rem' }} />
-                      <span>{d}</span>
+                <div style={{ borderTop: '1px solid rgba(5, 150, 105, 0.08)', paddingTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                  {stg.details.map((d, i) => (
+                    <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.84rem', color: '#1f2937' }}>
+                      <CheckCircle2 size={15} color={stg.color} style={{ flexShrink: 0, marginTop: '0.18rem' }} />
+                      <span style={{ lineHeight: 1.45 }}>{d}</span>
                     </div>
                   ))}
                 </div>
 
-                <div style={{ marginTop: '1.25rem', paddingTop: '0.75rem', borderTop: '1px solid rgba(5, 150, 105, 0.08)', fontSize: '0.78rem', color: '#6b7280', fontFamily: 'var(--font-mono)' }}>
-                  ⏱ {trk.time}
+                <div style={{ marginTop: '1.5rem', paddingTop: '0.75rem', borderTop: '1px solid rgba(5, 150, 105, 0.08)', fontSize: '0.8rem', color: '#059669', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
+                  ⏱ {stg.time}
                 </div>
               </TiltCard3D>
             );
           })}
         </div>
 
-        {/* 500-Pt Score Simulator */}
+        {/* =========================================================================
+            THE 5 CHALLENGE PROBLEM STATEMENTS EXPLORER
+           ========================================================================= */}
+        <div id="problem-tracks" style={{ marginBottom: '4.5rem' }}>
+          <div style={{ marginBottom: '2rem' }}>
+            <div className="crimson-pill" style={{ marginBottom: '0.5rem' }}>
+              ROUND 2 PROBLEM TRACKS
+            </div>
+            <h3 style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.3rem)', color: '#0f2e22', margin: '0 0 0.35rem', fontWeight: 800 }}>
+              The 5 Challenge Problem Statements
+            </h3>
+            <p style={{ color: '#4b5563', fontSize: '0.92rem', margin: 0 }}>
+              Each team selects exactly one track at the start of the 90-minute build window. Explore the mandatory core deliverables:
+            </p>
+          </div>
+
+          {/* Track Tabs */}
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '0.65rem',
+            marginBottom: '1.5rem'
+          }}>
+            {problemTracks.map((trk, idx) => (
+              <button
+                key={trk.id}
+                onClick={() => setActiveTrackTab(idx)}
+                style={{
+                  background: activeTrackTab === idx ? '#059669' : '#ffffff',
+                  color: activeTrackTab === idx ? '#ffffff' : '#0f2e22',
+                  border: activeTrackTab === idx ? '1px solid #059669' : '1px solid rgba(5, 150, 105, 0.2)',
+                  borderRadius: '6px',
+                  padding: '0.6rem 1.15rem',
+                  fontSize: '0.85rem',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  boxShadow: activeTrackTab === idx ? '0 2px 10px rgba(5, 150, 105, 0.25)' : 'none'
+                }}
+              >
+                {trk.num}: {trk.title.split('&')[0]}
+              </button>
+            ))}
+          </div>
+
+          {/* Active Track Highlight Box */}
+          {(() => {
+            const trk = problemTracks[activeTrackTab];
+            const Icon = trk.icon;
+            return (
+              <TiltCard3D
+                maxTilt={4}
+                style={{
+                  background: '#ffffff',
+                  border: '1.5px solid rgba(5, 150, 105, 0.25)',
+                  borderRadius: '12px',
+                  padding: '2.25rem',
+                  boxShadow: '0 6px 25px rgba(6, 78, 59, 0.06)'
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
+                  <div>
+                    <span style={{ fontSize: '0.8rem', color: trk.color, fontWeight: 800, fontFamily: 'var(--font-mono)', textTransform: 'uppercase' }}>
+                      {trk.num} • 90-MINUTE DEV SPRINT TRACK
+                    </span>
+                    <h4 style={{ fontSize: '1.6rem', color: '#0f2e22', margin: '0.2rem 0 0.35rem', fontWeight: 800 }}>
+                      {trk.title}
+                    </h4>
+                    <div style={{ fontSize: '1rem', color: trk.color, fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
+                      {trk.subtitle}
+                    </div>
+                  </div>
+
+                  <a
+                    href="/docs/DevSpark_Problem_Statements.pdf"
+                    download="DevSpark_Problem_Statements.pdf"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.45rem',
+                      background: '#ecfdf5',
+                      border: '1px solid #059669',
+                      color: '#059669',
+                      padding: '0.55rem 1rem',
+                      borderRadius: '6px',
+                      fontSize: '0.82rem',
+                      fontWeight: 700,
+                      textDecoration: 'none'
+                    }}
+                  >
+                    <Download size={14} />
+                    <span>Download Full Briefing (PDF)</span>
+                  </a>
+                </div>
+
+                <div style={{ background: '#f4f8f6', padding: '1rem 1.25rem', borderRadius: '8px', borderLeft: `4px solid ${trk.color}`, marginBottom: '1.75rem', fontSize: '0.92rem', color: '#374151', lineHeight: 1.6 }}>
+                  <strong>Context & Problem Challenge:</strong> {trk.context}
+                </div>
+
+                <div>
+                  <h5 style={{ fontSize: '0.95rem', color: '#0f2e22', fontWeight: 800, textTransform: 'uppercase', fontFamily: 'var(--font-mono)', marginBottom: '0.85rem' }}>
+                    Mandatory Core Deliverables:
+                  </h5>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '0.85rem' }}>
+                    {trk.deliverables.map((item, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          background: '#ffffff',
+                          border: '1px solid rgba(5, 150, 105, 0.15)',
+                          borderRadius: '6px',
+                          padding: '0.85rem 1rem',
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '0.65rem'
+                        }}
+                      >
+                        <span style={{ color: trk.color, fontWeight: 800, fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>
+                          0{i + 1}.
+                        </span>
+                        <span style={{ fontSize: '0.86rem', color: '#1f2937', lineHeight: 1.45 }}>
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </TiltCard3D>
+            );
+          })()}
+        </div>
+
+        {/* =========================================================================
+            OFFICIAL EVALUATION RUBRIC & DELIVERABLES (250 POINTS)
+           ========================================================================= */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '2rem',
+          marginBottom: '4.5rem'
+        }}>
+          {/* Left: 250-Pt Rubric Table */}
+          <div style={{
+            background: '#ffffff',
+            border: '1px solid rgba(5, 150, 105, 0.22)',
+            borderRadius: '12px',
+            padding: '2rem',
+            boxShadow: '0 4px 20px rgba(6, 78, 59, 0.05)'
+          }}>
+            <div className="crimson-pill" style={{ marginBottom: '0.5rem' }}>
+              STAGE 2 JURY RUBRIC (250 PTS)
+            </div>
+            <h4 style={{ fontSize: '1.3rem', color: '#0f2e22', marginBottom: '1.25rem', fontWeight: 800 }}>
+              Official Evaluation Criteria
+            </h4>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+              {rubric.map((r, i) => (
+                <div
+                  key={i}
+                  style={{
+                    borderBottom: i !== rubric.length - 1 ? '1px solid rgba(5, 150, 105, 0.08)' : 'none',
+                    paddingBottom: i !== rubric.length - 1 ? '0.85rem' : '0'
+                  }}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.25rem' }}>
+                    <span style={{ fontSize: '0.92rem', color: '#0f2e22', fontWeight: 700 }}>
+                      {r.criterion}
+                    </span>
+                    <span style={{ fontSize: '0.85rem', color: '#059669', fontWeight: 800, fontFamily: 'var(--font-mono)' }}>
+                      {r.max}
+                    </span>
+                  </div>
+                  <p style={{ fontSize: '0.82rem', color: '#4b5563', margin: 0, lineHeight: 1.45 }}>
+                    {r.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: Technical Deliverables & Core Policies */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <div style={{
+              background: '#ffffff',
+              border: '1px solid rgba(5, 150, 105, 0.22)',
+              borderRadius: '12px',
+              padding: '2rem',
+              boxShadow: '0 4px 20px rgba(6, 78, 59, 0.05)'
+            }}>
+              <div className="crimson-pill" style={{ marginBottom: '0.5rem' }}>
+                SUBMISSION STANDARDS
+              </div>
+              <h4 style={{ fontSize: '1.3rem', color: '#0f2e22', marginBottom: '1rem', fontWeight: 800 }}>
+                3 Technical Deliverables
+              </h4>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                {deliverables.map((item, idx) => (
+                  <div key={idx} style={{ background: '#f4f8f6', borderRadius: '8px', padding: '0.85rem 1rem', border: '1px solid rgba(5, 150, 105, 0.12)' }}>
+                    <div style={{ fontSize: '0.9rem', color: '#059669', fontWeight: 800, fontFamily: 'var(--font-mono)', marginBottom: '0.2rem' }}>
+                      {item.title}
+                    </div>
+                    <div style={{ fontSize: '0.82rem', color: '#4b5563', lineHeight: 1.45 }}>
+                      {item.desc}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Zero Black Box Policy Callout */}
+            <div style={{
+              background: '#ecfdf5',
+              border: '1.5px solid #059669',
+              borderRadius: '12px',
+              padding: '1.5rem',
+              boxShadow: '0 4px 15px rgba(5, 150, 105, 0.1)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#047857', fontWeight: 800, fontSize: '0.95rem', marginBottom: '0.4rem' }}>
+                <Shield size={18} />
+                <span>The "Zero-Black-Box" Rule</span>
+              </div>
+              <p style={{ fontSize: '0.85rem', color: '#064e3b', margin: 0, lineHeight: 1.55 }}>
+                AI tools are authorized for rapid scaffolding. However, every squad member must independently explain component logic, state mutations, and API calls during live jury examination. Inability to explain code triggers severe point deductions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* =========================================================================
+            350-PT SCORE SIMULATOR
+           ========================================================================= */}
         <TiltCard3D
           maxTilt={5}
           style={{
@@ -184,16 +504,16 @@ export const DetailsRounds = () => {
               SCORE SIMULATOR
             </div>
             <h3 style={{ fontSize: '1.5rem', color: '#0f2e22', marginBottom: '0.5rem' }}>
-              Cumulative 500-Point Target
+              Cumulative 350-Point Target
             </h3>
             <p style={{ fontSize: '0.88rem', color: '#4b5563', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-              Every round adds directly to your aggregate score. Adjust sliders to preview your final standing.
+              Both Round 1 (LogicSprint) and Round 2 (DevSprint) add directly to your aggregate standing.
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: '#4b5563', marginBottom: '0.25rem' }}>
-                  <span>Round 1: LogicSprint ({r1Correct} Correct)</span>
+                  <span>Round 1: LogicSprint ({r1Correct} Correct, {r1Incorrect} Incorrect)</span>
                   <span style={{ color: '#059669', fontWeight: 700 }}>{r1Calculated.toFixed(1)} / 100 Pts</span>
                 </div>
                 <input
@@ -208,31 +528,16 @@ export const DetailsRounds = () => {
 
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: '#4b5563', marginBottom: '0.25rem' }}>
-                  <span>Round 2: BugHunt Diagnostics</span>
-                  <span style={{ color: '#047857', fontWeight: 700 }}>{r2Score} / 150 Pts</span>
-                </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="150"
-                  value={r2Score}
-                  onChange={(e) => setR2Score(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: '#047857' }}
-                />
-              </div>
-
-              <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: '#4b5563', marginBottom: '0.25rem' }}>
-                  <span>Round 3: DevSprint (AI Prototype)</span>
-                  <span style={{ color: '#10b981', fontWeight: 700 }}>{r3Score} / 250 Pts</span>
+                  <span>Round 2: DevSprint (AI Prototype & Live Defense)</span>
+                  <span style={{ color: '#047857', fontWeight: 700 }}>{r2Score} / 250 Pts</span>
                 </div>
                 <input
                   type="range"
                   min="0"
                   max="250"
-                  value={r3Score}
-                  onChange={(e) => setR3Score(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: '#10b981' }}
+                  value={r2Score}
+                  onChange={(e) => setR2Score(Number(e.target.value))}
+                  style={{ width: '100%', accentColor: '#047857' }}
                 />
               </div>
             </div>
@@ -251,7 +556,7 @@ export const DetailsRounds = () => {
             </div>
             
             <div style={{ fontSize: '3.5rem', fontWeight: 800, color: '#0f2e22', lineHeight: 1.1, margin: '0.5rem 0' }}>
-              {totalScore} <span style={{ fontSize: '1.4rem', color: '#6b7280' }}>/ 500</span>
+              {totalScore} <span style={{ fontSize: '1.4rem', color: '#6b7280' }}>/ 350</span>
             </div>
 
             <div style={{ background: 'rgba(5, 150, 105, 0.12)', height: '6px', borderRadius: '3px', overflow: 'hidden', margin: '1.25rem 0' }}>
@@ -263,7 +568,7 @@ export const DetailsRounds = () => {
             </div>
 
             <div style={{ marginTop: '1.25rem', padding: '0.75rem', background: '#ecfdf5', borderRadius: '6px', border: '1px solid rgba(5, 150, 105, 0.25)', fontSize: '0.82rem', color: '#059669', fontWeight: 700 }}>
-              {totalScore >= 420 ? '🏆 Podium Winning Range (Top 3 Contender)' : totalScore >= 340 ? '🎖️ High Merit Tier (Certificate of Excellence)' : '🚀 Active Contender'}
+              {totalScore >= 300 ? '🏆 Top Standing (Podium Contender)' : totalScore >= 240 ? '🎖️ High Merit Tier (Certificate of Excellence)' : '🚀 Active Sprint Builder'}
             </div>
           </div>
         </TiltCard3D>

@@ -15,49 +15,49 @@ export const TimelineSection = () => {
       time: '09:45 AM – 10:15 AM',
       phase: 'Phase 02',
       title: 'Inauguration & Operational Briefing',
-      desc: 'Opening remarks by HOD (CSE), rulebook overview, and 500-pt scoring guidelines.',
+      desc: 'Opening remarks by HOD (CSE), rulebook overview, and 350-pt scoring guidelines.',
       color: '#047857'
     },
     {
       time: '10:15 AM – 11:00 AM',
       phase: 'Phase 03',
       title: 'Round 1: LogicSprint (Aptitude & Tech Assessment)',
-      desc: '40 Objective questions (+2.5 / -0.5). Synchronized digital freeze at 11:00 AM.',
+      desc: '40 Objective MCQs (+2.5 / -0.5). Synchronized digital auto-lock at 11:00 AM.',
       color: '#059669'
     },
     {
-      time: '11:15 AM – 12:30 PM',
+      time: '11:00 AM – 11:30 AM',
       phase: 'Phase 04',
-      title: 'Round 2: BugHunt & Logic Tracing (Debugging)',
-      desc: '3 Challenge tiers across Python, C++, Java, JS with hidden test suite execution.',
+      title: 'Problem Statements Reveal & 5 Track Selection',
+      desc: 'Release of 5 challenge tracks, team strategy alignment, and prompt architecture planning.',
       color: '#047857'
     },
     {
-      time: '12:30 PM – 01:30 PM',
+      time: '11:30 AM – 01:00 PM',
       phase: 'Phase 05',
-      title: 'Lunch & Mid-Day Networking Break',
-      desc: 'Complimentary lunch for all teams; mid-sprint score audits.',
+      title: 'Round 2: DevSprint (90-Min AI Prototype Build)',
+      desc: '90-min rapid AI prototype development with Gemini, ChatGPT, Claude, Copilot, v0.',
       color: '#10b981'
     },
     {
-      time: '01:30 PM – 03:15 PM',
+      time: '01:00 PM – 02:00 PM',
       phase: 'Phase 06',
-      title: 'Round 3: DevSprint (AI Prototyping Build)',
-      desc: 'Problem statement release; 90 mins AI build window + 15 mins code freeze.',
+      title: 'Lunch & Mid-Day Networking Break',
+      desc: 'Complimentary lunch for all squads; code freeze & preliminary submission audit.',
       color: '#059669'
     },
     {
-      time: '03:15 PM – 04:15 PM',
+      time: '02:00 PM – 04:15 PM',
       phase: 'Phase 07',
-      title: 'Live Stage Demonstrations & Technical Q&A',
-      desc: '3–4 min prototype defense per team evaluated on the 250-pt rubric.',
+      title: 'Live Stage Demonstrations & Technical Jury Q&A',
+      desc: '3–4 min prototype defense per team evaluated on the 250-pt rubric under the Zero-Black-Box rule.',
       color: '#047857'
     },
     {
-      time: '04:40 PM – 05:15 PM',
+      time: '04:30 PM – 05:15 PM',
       phase: 'Phase 08',
-      title: 'Valedictory Ceremony & Prize Distribution',
-      desc: 'Announcement of Top 3 winners (₹10k, ₹5.5k, ₹3.5k + Trophies + Certificates).',
+      title: 'Valedictory Ceremony & Accolades',
+      desc: 'Announcement of standout teams (Winner Trophies + Official Certificates of Recognition for all).',
       color: '#10b981'
     }
   ];

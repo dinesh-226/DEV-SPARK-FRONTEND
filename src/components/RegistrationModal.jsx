@@ -77,8 +77,8 @@ export const RegistrationModal = ({ isOpen, onClose, onRegistrationSuccess }) =>
   };
 
   const handleAddMember = () => {
-    if (members.length >= 4) {
-      setErrorMsg('Maximum team size is 5 members (1 Leader + 4 Members).');
+    if (members.length >= 2) {
+      setErrorMsg('Maximum team size is strictly 3 members (1 Leader + 2 Members).');
       return;
     }
     setErrorMsg('');
@@ -478,7 +478,7 @@ export const RegistrationModal = ({ isOpen, onClose, onRegistrationSuccess }) =>
                       Team Members ({members.length} added)
                     </h4>
 
-                    {members.length < 4 && (
+                    {members.length < 2 && (
                       <button
                         type="button"
                         onClick={handleAddMember}

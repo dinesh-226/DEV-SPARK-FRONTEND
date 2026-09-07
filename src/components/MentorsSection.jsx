@@ -157,111 +157,7 @@ export const MentorsSection = ({ onRegisterClick }) => {
         </div>
 
         {/* =========================================================================
-            2. INTER-COLLEGE & TPO SIR FACULTY CONTACT CARD
-           ========================================================================= */}
-        <div style={{ marginBottom: '4.5rem' }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1.75rem'
-          }}>
-            <TiltCard3D
-              className="dribbble-card"
-              maxTilt={8}
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '1.5rem',
-                padding: '1.75rem 1.75rem',
-                alignItems: 'center',
-                background: '#ffffff',
-                border: '1px solid rgba(5, 150, 105, 0.18)',
-                borderTop: '4px solid #059669',
-                cursor: 'pointer',
-                boxShadow: '0 4px 20px rgba(6, 78, 59, 0.06)',
-                maxWidth: '620px'
-              }}
-            >
-              {/* Faculty Passport Photo Frame (Exact Same Size as Mentors) */}
-              <div style={{
-                width: '140px',
-                height: '175px',
-                borderRadius: '8px',
-                overflow: 'hidden',
-                flexShrink: 0,
-                background: '#f4f8f6',
-                border: '2.5px solid #059669',
-                boxShadow: '0 6px 20px rgba(5, 150, 105, 0.2)'
-              }}>
-                <img
-                  src="/organizers/faculty_contact_passport.jpg"
-                  alt="Mr. Vivek Sir"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    filter: 'contrast(1.05)',
-                    transition: 'all 0.3s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'scale(1.06)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'scale(1)';
-                  }}
-                />
-              </div>
-
-              {/* Faculty Info: Name, TPO Sir, Inner Line & Phone Number */}
-              <div style={{ flex: 1 }}>
-                <h3 style={{ fontSize: '1.4rem', color: '#0f2e22', margin: '0 0 0.35rem', fontWeight: 800 }}>
-                  Mr. Vivek Sir
-                </h3>
-
-                <div style={{ fontSize: '0.95rem', color: '#059669', fontWeight: 700, fontFamily: 'var(--font-mono)', textTransform: 'uppercase', marginBottom: '0.45rem' }}>
-                  Training and Placement Officer
-                </div>
-
-                <div style={{ fontSize: '0.85rem', color: '#4b5563', lineHeight: 1.45, marginBottom: '0.75rem' }}>
-                  For faculty escorts, inter-college team registrations, official institutional verification, or general campus sprint queries:
-                </div>
-
-                <a
-                  href="tel:6239760625"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.45rem',
-                    background: '#ecfdf5',
-                    border: '1px solid #059669',
-                    color: '#047857',
-                    padding: '0.4rem 0.85rem',
-                    borderRadius: '6px',
-                    fontSize: '0.92rem',
-                    fontWeight: 800,
-                    fontFamily: 'var(--font-mono)',
-                    textDecoration: 'none',
-                    transition: 'all 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = '#059669';
-                    e.currentTarget.style.color = '#ffffff';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = '#ecfdf5';
-                    e.currentTarget.style.color = '#047857';
-                  }}
-                >
-                  <Phone size={15} />
-                  <span>+91 62397 60625</span>
-                </a>
-              </div>
-            </TiltCard3D>
-          </div>
-        </div>
-
-        {/* =========================================================================
-            3. EVENT COORDINATORS (WHITE CARDS WITH GREEN ACCENTS)
+            2. EVENT COORDINATORS (WHITE CARDS WITH GREEN ACCENTS)
            ========================================================================= */}
         <div style={{ marginBottom: '4.5rem' }}>
 
@@ -381,7 +277,7 @@ export const MentorsSection = ({ onRegisterClick }) => {
         </div>
 
         {/* =========================================================================
-            4. JUDGES SECTION (GREEN ACCENTS ON WHITE BACKGROUND)
+            3. JUDGES SECTION (GREEN ACCENTS ON WHITE BACKGROUND)
            ========================================================================= */}
         <div>
           <div className="crimson-pill" style={{ marginBottom: '0.6rem' }}>

@@ -4,7 +4,6 @@ import { Hero } from './components/Hero';
 import { WhatsThat } from './components/WhatsThat';
 import { DetailsRounds } from './components/DetailsRounds';
 import { TimelineSection } from './components/TimelineSection';
-import { PrizesSection } from './components/PrizesSection';
 import { MentorsSection } from './components/MentorsSection';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
@@ -42,10 +41,7 @@ export const App = () => {
       {/* Section 3: Master Schedule & Timeline */}
       <TimelineSection />
 
-      {/* Section 4: ₹28,000 Prize Pool Podium with Hover Tilt */}
-      <PrizesSection />
-
-      {/* Section 5: Faculty Mentors, Organizers & Judges */}
+      {/* Section 4: Faculty Mentors, Organizers & Judges */}
       <MentorsSection onRegisterClick={handleOpenRegister} />
 
       {/* Section 6: Frequently Asked Questions */}

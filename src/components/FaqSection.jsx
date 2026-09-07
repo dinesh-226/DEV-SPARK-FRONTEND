@@ -7,20 +7,24 @@ export const FaqSection = () => {
 
   const faqs = [
     {
-      q: 'Can students from non-engineering streams (BCA, BBA, Commerce, Sciences) participate?',
-      a: 'Yes, absolutely! DevSpark is an open campus event. Multidisciplinary teams combining engineering/computing students with management, commerce, and science students are actively encouraged.'
+      q: 'Can students from non-engineering streams (BCA, MCA, BBA, Commerce, Sciences) participate?',
+      a: 'Yes, absolutely! The competition is strictly open to all bona fide registered undergraduate and postgraduate students from all branches and degree programs (including B.Tech CSE, IT, ME, CE, ECE, BCA, MCA, B.Sc, BBA, B.Com, and allied disciplines). Cross-departmental teaming is actively encouraged.'
     },
     {
-      q: 'Is there any mid-event elimination after Round 1 or Round 2?',
-      a: 'No! DevSpark operates on a 500-point cumulative non-eliminatory framework. Every registered team competes in all 3 rounds (LogicSprint, BugHunt, DevSprint). Final rankings are determined strictly by aggregate score.'
+      q: 'What is the required team size?',
+      a: 'Teams must strictly comprise a minimum of 2 members and a maximum of 3 members. Solo participation is prohibited to foster collaborative peer development. An individual student can represent only one team.'
     },
     {
-      q: 'Are Generative AI tools (Gemini, ChatGPT, Claude, Copilot) allowed during Round 3?',
-      a: 'Yes! In Round 3 (DevSprint), teams are actively permitted to utilize approved AI assistants (Gemini, ChatGPT, Claude, GitHub Copilot, v0) for rapid code generation, scaffolding, and debugging. Prompt iteration and mastery are formally evaluated.'
+      q: 'Is there any mid-event elimination after Round 1?',
+      a: 'No! DevSpark operates on a 350-point cumulative non-eliminatory model. Every registered team participates in both Round 1 (LogicSprint - 100 Pts) and Round 2 (DevSprint - 250 Pts). Final standings are determined strictly by aggregate score.'
     },
     {
-      q: 'What hardware should each team bring to the Auditorium?',
-      a: 'DevSpark follows a BYOD (Bring Your Own Device) model. Each team should bring at least 1–2 laptops with chargers and a multi-plug extension spike strip. High-speed campus Wi-Fi and electrical power grid access are provided.'
+      q: 'Are Generative AI tools (ChatGPT, Gemini, Claude, Copilot, Cursor, v0) allowed?',
+      a: 'Yes! Generative AI tools are fully authorized for scaffolding, boilerplate generation, and rapid UI/logic synthesis. However, squads must abide by the "Zero-Black-Box" rule (every member must be able to explain the code) and maintain an AI_PROMPT_LOG.md file.'
+    },
+    {
+      q: 'What are the 3 mandatory submission deliverables?',
+      a: '1. Working Source Code (Web app, Mobile client, or CLI tool), 2. README.md with step-by-step local setup or working deployment link (Vercel, Netlify, Streamlit), and 3. AI_PROMPT_LOG.md documenting the top 3–5 system and scaffolding prompts.'
     },
     {
       q: 'Will all participants receive certificates?',

@@ -16,9 +16,9 @@ export const Navbar = ({ onOpenAdmin, onOpenRegister }) => {
 
   const navLinks = [
     { name: "What's that?", href: '#overview' },
-    { name: 'Details', href: '#details' },
+    { name: 'Rules & Rubric', href: '#details' },
+    { name: '5 Problem Tracks', href: '#problem-tracks' },
     { name: 'Schedule', href: '#schedule' },
-    { name: 'Prizes', href: '#prizes' },
     { name: 'Mentors', href: '#mentors' },
     { name: 'FAQ', href: '#faq' }
   ];
