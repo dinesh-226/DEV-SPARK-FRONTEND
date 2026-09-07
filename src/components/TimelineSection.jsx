@@ -28,8 +28,8 @@ export const TimelineSection = () => {
     {
       time: '11:00 AM – 11:15 AM',
       phase: 'Break',
-      title: '15-Minute Refreshment Break',
-      desc: 'Quick breather and preparation for Round 2 prototype showcase.',
+      title: '15 Min Break',
+      desc: 'Short 15 min break and transition for Round 2 prototype showcase.',
       color: '#10b981'
     },
     {

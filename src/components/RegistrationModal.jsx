@@ -229,13 +229,13 @@ export const RegistrationModal = ({ isOpen, onClose, onRegistrationSuccess }) =>
         <div style={{ padding: '1.5rem', overflowY: 'auto', flex: 1, background: '#ffffff' }}>
           
           {/* =========================================================================
-              CLEAN SUCCESS CONFIRMATION STATE (NO SCANNER / NO PASS MODAL)
+              CLEAN & SIMPLE SUCCESS CONFIRMATION STATE
              ========================================================================= */}
           {registeredSuccessData ? (
-            <div style={{ textAlign: 'center', padding: '1.5rem 0.5rem' }}>
+            <div style={{ textAlign: 'center', padding: '2.5rem 1rem' }}>
               <div style={{
-                width: '68px',
-                height: '68px',
+                width: '76px',
+                height: '76px',
                 borderRadius: '50%',
                 background: '#ecfdf5',
                 border: '2px solid #059669',
@@ -243,71 +243,29 @@ export const RegistrationModal = ({ isOpen, onClose, onRegistrationSuccess }) =>
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: '#059669',
-                margin: '0 auto 1.25rem',
-                boxShadow: '0 8px 25px rgba(5, 150, 105, 0.2)'
+                margin: '0 auto 1.5rem',
+                boxShadow: '0 8px 25px rgba(5, 150, 105, 0.25)'
               }}>
-                <CheckCircle2 size={38} />
+                <CheckCircle2 size={44} />
               </div>
 
-              <div style={{
-                display: 'inline-block',
-                background: '#ecfdf5',
-                border: '1px solid #059669',
-                color: '#059669',
-                padding: '0.3rem 0.85rem',
-                borderRadius: '6px',
-                fontSize: '0.8rem',
-                fontWeight: 800,
-                fontFamily: 'var(--font-mono)',
-                marginBottom: '0.75rem'
-              }}>
-                REGISTRATION CONFIRMED
-              </div>
-
-              <h3 style={{ fontSize: 'clamp(1.4rem, 4vw, 1.85rem)', color: '#0f2e22', marginBottom: '0.5rem', fontWeight: 800 }}>
-                {registeredSuccessData.teamName}
+              <h3 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', color: '#0f2e22', marginBottom: '0.75rem', fontWeight: 800 }}>
+                Registered Successfully!
               </h3>
 
-              <p style={{ color: '#4b5563', fontSize: '0.95rem', maxWidth: '500px', margin: '0 auto 1.5rem', lineHeight: 1.5 }}>
-                Your team registration for DevSpark has been officially recorded in the database.
+              <p style={{ color: '#4b5563', fontSize: '1rem', maxWidth: '420px', margin: '0 auto 2rem', lineHeight: 1.5 }}>
+                Your team has been registered successfully for DevSpark.
               </p>
-
-              {/* Summary Card */}
-              <div style={{
-                background: '#f4f8f6',
-                border: '1px solid rgba(5, 150, 105, 0.2)',
-                borderRadius: '10px',
-                padding: '1.25rem',
-                maxWidth: '460px',
-                margin: '0 auto 1.75rem',
-                textAlign: 'left'
-              }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(5, 150, 105, 0.1)', paddingBottom: '0.5rem', marginBottom: '0.5rem', fontSize: '0.88rem' }}>
-                  <span style={{ color: '#6b7280' }}>Registration ID:</span>
-                  <strong style={{ color: '#059669', fontFamily: 'var(--font-mono)' }}>{registeredSuccessData.registrationId}</strong>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(5, 150, 105, 0.1)', paddingBottom: '0.5rem', marginBottom: '0.5rem', fontSize: '0.88rem' }}>
-                  <span style={{ color: '#6b7280' }}>Team Leader:</span>
-                  <strong style={{ color: '#0f2e22' }}>{registeredSuccessData.teamLeader?.name}</strong>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(5, 150, 105, 0.1)', paddingBottom: '0.5rem', marginBottom: '0.5rem', fontSize: '0.88rem' }}>
-                  <span style={{ color: '#6b7280' }}>Total Builders:</span>
-                  <strong style={{ color: '#0f2e22' }}>{1 + (registeredSuccessData.members ? registeredSuccessData.members.length : 0)} Members</strong>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem' }}>
-                  <span style={{ color: '#6b7280' }}>Institution:</span>
-                  <strong style={{ color: '#0f2e22', textAlign: 'right', maxWidth: '240px' }}>{registeredSuccessData.collegeName}</strong>
-                </div>
-              </div>
 
               <button
                 onClick={handleClose}
                 className="btn-dribbble btn-dribbble-primary"
                 style={{
-                  padding: '0.75rem 2.75rem',
+                  padding: '0.85rem 3rem',
                   fontSize: '1rem',
+                  fontWeight: 700,
                   width: '100%',
-                  maxWidth: '300px'
+                  maxWidth: '260px'
                 }}
               >
                 Done
