@@ -203,16 +203,13 @@ export const WhatsThat = ({ onRegisterClick }) => {
               fontWeight: 700,
               color: '#0f2e22',
               lineHeight: 1.4,
-              marginBottom: '0.75rem',
+              marginBottom: '1rem',
               fontFamily: 'var(--font-heading)',
               wordBreak: 'break-word',
               overflowWrap: 'break-word'
             }}>
               "Tell me and I will forget, show me and I may remember, involve me and I will understand."
             </blockquote>
-            <div style={{ color: '#059669', fontWeight: 700, fontSize: '0.88rem', marginBottom: '1.15rem' }}>
-              Xunzi • Applied Learning Philosophy
-            </div>
 
             <p style={{ color: '#4b5563', fontSize: 'clamp(0.85rem, 2.5vw, 0.92rem)', lineHeight: 1.65, margin: 0, wordBreak: 'break-word', overflowWrap: 'break-word' }}>
               DevSpark is built on developer-first community principles. Rather than passive lectures, every student actively diagnoses code, tests edge cases, and builds functional prototypes before an expert jury.
