@@ -8,16 +8,17 @@ import { TiltCard3D } from './TiltCard3D';
 export const DetailsRounds = () => {
   const [activeStageTab, setActiveStageTab] = useState(0);
 
-  // Score Calculator State (350 Points Model)
+  // Score Calculator State (300 Points Model: R1 100 Pts + R2 Phase 1 100 Pts + R2 Phase 2 100 Pts)
   const [r1Correct, setR1Correct] = useState(32);
   const [r1Incorrect, setR1Incorrect] = useState(4);
-  const [r2Score, setR2Score] = useState(210);
+  const [r2Phase1, setR2Phase1] = useState(85);
+  const [r2Phase2, setR2Phase2] = useState(90);
 
   const r1Calculated = Math.max(0, Math.min(100, (r1Correct * 2.5) - (r1Incorrect * 0.5)));
-  const totalScore = Math.round((r1Calculated + r2Score) * 10) / 10;
-  const percentage = Math.round((totalScore / 350) * 100);
+  const totalScore = Math.round((r1Calculated + r2Phase1 + r2Phase2) * 10) / 10;
+  const percentage = Math.round((totalScore / 300) * 100);
 
-  // 2 Official Competition Stages (100 Pts + 250 Pts = 350 Pts Total)
+  // 2 Official Competition Stages (Round 1: 100 Pts + Round 2: 200 Pts = 300 Pts Total)
   const stages = [
     {
       id: 'round1',
@@ -39,16 +40,16 @@ export const DetailsRounds = () => {
     {
       id: 'round2',
       tag: 'STAGE 02',
-      title: 'Round 2: DevSprint Showcase & Defense',
-      points: '250 Points',
+      title: 'Round 2: DevSprint (Phase 1 & Phase 2)',
+      points: '200 Points (100 + 100)',
       time: '11:15 AM – 01:15 PM (Phase 1 Demos & Phase 2 Finalist Defense)',
       color: '#047857', // Forest Green
       icon: Cpu,
-      desc: 'Build your AI prototype solution beforehand from home based on the problem tracks. On event day, showcase and defend your live working prototype across Phase 1 demos and Phase 2 Top 5 finalist defense.',
+      desc: 'Round 2 features 2 distinct phases totaling 200 Points: Phase 1 (100 Pts) evaluates pre-built prototypes to shortlist the Top 5 teams, and Phase 2 (100 Pts) evaluates stage defense for final results.',
       details: [
+        'Phase 1 Prototype Showcase (100 Points | 11:15 AM – 12:00 PM): All squads demonstrate their live running prototype before the jury to qualify for the Top 5 shortlist',
+        'Phase 2 Finalist Stage Defense (100 Points | 12:15 PM – 01:15 PM): Top 5 shortlisted teams deliver in-depth stage defense and technical jury Q&A for the final results',
         'Build from Home: Develop full working code beforehand using ChatGPT, Gemini, Claude, Copilot, v0, Cursor',
-        'Phase 1 Demos (11:15 AM – 12:00 PM): All squads demonstrate their live running prototype before the jury',
-        'Phase 2 Finalist Defense (12:15 PM – 01:15 PM): Top 5 shortlisted teams deliver in-depth stage defense and jury Q&A',
         'The "Zero-Black-Box" Rule: Every member must explain component logic, state handlers, and APIs without rote copy-pasting',
         'Live Dynamic Execution: Prototypes must execute live with reactive inputs (0 pts for static Figma/wireframes)'
       ]
@@ -68,7 +69,7 @@ export const DetailsRounds = () => {
             2-Stage Sprint & Evaluation Matrix
           </h2>
           <p style={{ color: '#4b5563', maxWidth: '680px', fontSize: '0.98rem', lineHeight: 1.6 }}>
-            A cumulative 350-point framework comprising Round 1 LogicSprint (100 Pts) and Round 2 DevSprint (250 Pts) governed by the official Department evaluation rubric.
+            A cumulative 300-point framework comprising Round 1 LogicSprint (100 Pts) and Round 2 DevSprint (200 Pts: 100 Pts Phase 1 Top 5 Shortlist + 100 Pts Phase 2 Final Defense) governed by the official Department evaluation rubric.
           </p>
         </div>
 
@@ -234,7 +235,7 @@ export const DetailsRounds = () => {
         </div>
 
         {/* =========================================================================
-            350-PT SCORE SIMULATOR
+            300-PT SCORE SIMULATOR
            ========================================================================= */}
         <TiltCard3D
           maxTilt={5}
@@ -255,10 +256,10 @@ export const DetailsRounds = () => {
               SCORE SIMULATOR
             </div>
             <h3 style={{ fontSize: '1.5rem', color: '#0f2e22', marginBottom: '0.5rem' }}>
-              Cumulative 350-Point Target
+              Cumulative 300-Point Target
             </h3>
             <p style={{ fontSize: '0.88rem', color: '#4b5563', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-              Both Round 1 (LogicSprint) and Round 2 (DevSprint) add directly to your aggregate standing.
+              Round 1 (100 Pts) + Round 2 Phase 1 (100 Pts Top 5 Shortlist) + Round 2 Phase 2 (100 Pts Final Result).
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -279,16 +280,31 @@ export const DetailsRounds = () => {
 
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: '#4b5563', marginBottom: '0.25rem' }}>
-                  <span>Round 2: DevSprint (AI Prototype & Live Defense)</span>
-                  <span style={{ color: '#047857', fontWeight: 700 }}>{r2Score} / 250 Pts</span>
+                  <span>Round 2: Phase 1 Demos (Top 5 Shortlist)</span>
+                  <span style={{ color: '#047857', fontWeight: 700 }}>{r2Phase1} / 100 Pts</span>
                 </div>
                 <input
                   type="range"
                   min="0"
-                  max="250"
-                  value={r2Score}
-                  onChange={(e) => setR2Score(Number(e.target.value))}
+                  max="100"
+                  value={r2Phase1}
+                  onChange={(e) => setR2Phase1(Number(e.target.value))}
                   style={{ width: '100%', accentColor: '#047857' }}
+                />
+              </div>
+
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: '#4b5563', marginBottom: '0.25rem' }}>
+                  <span>Round 2: Phase 2 Stage Defense (Final Result)</span>
+                  <span style={{ color: '#059669', fontWeight: 700 }}>{r2Phase2} / 100 Pts</span>
+                </div>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={r2Phase2}
+                  onChange={(e) => setR2Phase2(Number(e.target.value))}
+                  style={{ width: '100%', accentColor: '#059669' }}
                 />
               </div>
             </div>
@@ -307,7 +323,7 @@ export const DetailsRounds = () => {
             </div>
             
             <div style={{ fontSize: '3.5rem', fontWeight: 800, color: '#0f2e22', lineHeight: 1.1, margin: '0.5rem 0' }}>
-              {totalScore} <span style={{ fontSize: '1.4rem', color: '#6b7280' }}>/ 350</span>
+              {totalScore} <span style={{ fontSize: '1.4rem', color: '#6b7280' }}>/ 300</span>
             </div>
 
             <div style={{ background: 'rgba(5, 150, 105, 0.12)', height: '6px', borderRadius: '3px', overflow: 'hidden', margin: '1.25rem 0' }}>
@@ -319,7 +335,7 @@ export const DetailsRounds = () => {
             </div>
 
             <div style={{ marginTop: '1.25rem', padding: '0.75rem', background: '#ecfdf5', borderRadius: '6px', border: '1px solid rgba(5, 150, 105, 0.25)', fontSize: '0.82rem', color: '#059669', fontWeight: 700 }}>
-              {totalScore >= 300 ? '🏆 Top Standing (Podium Contender)' : totalScore >= 240 ? '🎖️ High Merit Tier (Certificate of Excellence)' : '🚀 Active Sprint Builder'}
+              {totalScore >= 255 ? '🏆 Top Standing (Podium Contender)' : totalScore >= 200 ? '🎖️ High Merit Tier (Certificate of Excellence)' : '🚀 Active Sprint Builder'}
             </div>
           </div>
         </TiltCard3D>

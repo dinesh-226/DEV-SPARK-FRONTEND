@@ -15,7 +15,7 @@ export const TimelineSection = () => {
       time: '10:00 AM – 10:15 AM',
       phase: 'Briefing',
       title: 'Operational Briefing',
-      desc: 'Opening remarks by HOD (CSE), rulebook overview, and 350-pt scoring guidelines.',
+      desc: 'Opening remarks by HOD (CSE), rulebook overview, and 300-pt scoring guidelines (Round 1: 100 Pts + Round 2: 200 Pts).',
       color: '#047857'
     },
     {
@@ -34,9 +34,9 @@ export const TimelineSection = () => {
     },
     {
       time: '11:15 AM – 12:00 PM',
-      phase: 'Round 02 • Phase 1',
-      title: 'Round 2: DevSprint Showcase (Phase 1 Demos)',
-      desc: 'All teams showcase their home-built working prototype before the evaluation jury.',
+      phase: 'Round 02 • Phase 1 (100 Pts)',
+      title: 'Round 2: DevSprint Showcase (Phase 1 — 100 Pts)',
+      desc: 'All teams showcase their home-built working prototype before the evaluation jury (100 Pts) to qualify for the Top 5 shortlist.',
       color: '#059669'
     },
     {
@@ -48,9 +48,9 @@ export const TimelineSection = () => {
     },
     {
       time: '12:15 PM – 01:15 PM',
-      phase: 'Round 02 • Phase 2',
-      title: 'Round 2: DevSprint Finalist Stage Defense',
-      desc: 'In-depth stage demonstration and technical jury Q&A for the Top 5 finalist teams.',
+      phase: 'Round 02 • Phase 2 (100 Pts)',
+      title: 'Round 2: DevSprint Finalist Stage Defense (Phase 2 — 100 Pts)',
+      desc: 'In-depth stage demonstration and technical jury Q&A for the Top 5 finalist teams (100 Pts) to decide the final championship results.',
       color: '#059669'
     },
     {

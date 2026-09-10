@@ -8,9 +8,9 @@ export const WhatsThat = ({ onRegisterClick }) => {
   const features = [
     {
       num: '01',
-      title: '350-Pt Cumulative',
-      subtitle: 'Zero Mid-Event Elimination',
-      desc: 'All teams participate across both Round 1 (LogicSprint) and Round 2 (DevSprint). Standings are determined strictly by aggregate score at the valedictory ceremony.',
+      title: '300-Pt Cumulative',
+      subtitle: '2-Phase DevSprint Model',
+      desc: 'Round 1 (100 Pts) + Round 2 (200 Pts). Phase 1 (100 Pts) evaluates working prototypes to shortlist the Top 5 teams, and Phase 2 (100 Pts) determines final podium results.',
       color: '#059669' // Emerald Green
     },
     {

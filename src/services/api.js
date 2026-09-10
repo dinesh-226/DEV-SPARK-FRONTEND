@@ -68,7 +68,7 @@ export const fetchStatsAPI = async () => {
         totalTeams: 0,
         totalParticipants: 0,
         verifiedTeams: 0,
-        totalPoints: 350
+        totalPoints: 300
       }
     };
   }
