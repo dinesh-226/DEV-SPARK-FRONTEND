@@ -12,7 +12,7 @@ export const Guidelines = () => {
     { id: 'overview', label: 'Executive Summary' },
     { id: 'eligibility', label: 'Eligibility & Team Roster' },
     { id: 'byod', label: 'BYOD Infrastructure' },
-    { id: 'scoring', label: '500-Pt Scoring Matrix' },
+    { id: 'scoring', label: '200-Pt Evaluation Rubric' },
     { id: 'contingency', label: 'Risk & Contingency' }
   ];
 
@@ -255,9 +255,9 @@ export const Guidelines = () => {
                     <ShieldCheck size={22} color="#d97706" />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.45rem', color: '#0f172a' }}>500-Point Scoring Matrix & Tie-Breaker Protocol</h3>
+                    <h3 style={{ fontSize: '1.45rem', color: '#0f172a' }}>200-Point Evaluation Matrix & Finalist Shortlist</h3>
                     <p style={{ fontSize: '0.82rem', color: '#64748b', margin: 0, fontFamily: 'var(--font-mono)' }}>
-                      Section 4.0 • Non-Eliminatory Architecture
+                      Section 4.0 • 2-Phase Evaluation Architecture
                     </p>
                   </div>
                 </div>
@@ -270,13 +270,13 @@ export const Guidelines = () => {
                   marginBottom: '1.75rem'
                 }}>
                   <div style={{ fontSize: '0.82rem', color: '#0369a1', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
-                    AGGREGATE SCORING FORMULA
+                    TOP 3 WINNER EVALUATION FORMULA
                   </div>
                   <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#0f172a', margin: '0.4rem 0' }}>
-                    Round 1 (100 Pts) + Round 2 (150 Pts) + Round 3 (250 Pts) = <span className="gradient-labs-ai">500 Max Points</span>
+                    Round 1 (100 Pts) + Round 2 Phase 2 (100 Pts) = <span className="gradient-labs-ai">200 Max Points</span>
                   </div>
                   <p style={{ fontSize: '0.88rem', color: '#475569', margin: 0 }}>
-                    Every team stays in the competition until the final podium announcement.
+                    Round 2 Phase 1 (100 Pts) evaluates live prototypes specifically to shortlist the Top 5 finalists.
                   </p>
                 </div>
 
@@ -284,11 +284,11 @@ export const Guidelines = () => {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                   <div style={{ background: '#ffffff', border: '1px solid rgba(226, 232, 240, 0.8)', padding: '0.9rem 1.2rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.75rem', boxShadow: '0 2px 6px rgba(0,0,0,0.02)' }}>
                     <span className="labs-pill cyan" style={{ padding: '0.15rem 0.5rem', fontSize: '0.72rem' }}>Tier 1</span>
-                    <span style={{ fontSize: '0.9rem', color: '#334155' }}>Higher score in <strong>Round 3 (DevSprint AI Prototype)</strong> takes precedence.</span>
+                    <span style={{ fontSize: '0.9rem', color: '#334155' }}>Higher score in <strong>Round 2 Phase 2 (Stage Defense & Q&A)</strong> takes precedence.</span>
                   </div>
                   <div style={{ background: '#ffffff', border: '1px solid rgba(226, 232, 240, 0.8)', padding: '0.9rem 1.2rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.75rem', boxShadow: '0 2px 6px rgba(0,0,0,0.02)' }}>
                     <span className="labs-pill cyan" style={{ padding: '0.15rem 0.5rem', fontSize: '0.72rem' }}>Tier 2</span>
-                    <span style={{ fontSize: '0.9rem', color: '#334155' }}>If still tied, higher score in <strong>Round 2 (BugHunt Diagnostics)</strong> decides rank.</span>
+                    <span style={{ fontSize: '0.9rem', color: '#334155' }}>If still tied, higher score in <strong>Round 2 Phase 1 (Prototype Showcase)</strong> decides rank.</span>
                   </div>
                   <div style={{ background: '#ffffff', border: '1px solid rgba(226, 232, 240, 0.8)', padding: '0.9rem 1.2rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.75rem', boxShadow: '0 2px 6px rgba(0,0,0,0.02)' }}>
                     <span className="labs-pill cyan" style={{ padding: '0.15rem 0.5rem', fontSize: '0.72rem' }}>Tier 3</span>

@@ -8,9 +8,9 @@ export const WhatsThat = ({ onRegisterClick }) => {
   const features = [
     {
       num: '01',
-      title: '300-Pt Cumulative',
-      subtitle: '2-Phase DevSprint Model',
-      desc: 'Round 1 (100 Pts) + Round 2 (200 Pts). Phase 1 (100 Pts) evaluates working prototypes to shortlist the Top 5 teams, and Phase 2 (100 Pts) determines final podium results.',
+      title: '200-Pt Final Scoring',
+      subtitle: 'Top 5 Shortlist & Top 3 Winners',
+      desc: 'Phase 1 (100 Pts) shortlists the Top 5 finalist teams. The final Top 3 Winners are evaluated from Round 1 (100 Pts) + Round 2 Phase 2 Stage Defense (100 Pts) = 200 Total Points.',
       color: '#059669' // Emerald Green
     },
     {

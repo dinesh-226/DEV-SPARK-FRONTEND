@@ -15,9 +15,9 @@ export const StatsRibbon = () => {
     },
     {
       icon: Layers,
-      title: '500-Pt Cumulative',
-      subtitle: 'Zero Mid-Event Eliminations',
-      desc: 'All teams play all 3 rounds (R1: 100 Pts + R2: 150 Pts + R3: 250 Pts). Final standings by aggregate performance.',
+      title: '200-Pt Final Scoring',
+      subtitle: 'Top 5 Shortlist & Top 3 Winners',
+      desc: 'Phase 1 (100 Pts) shortlists Top 5 teams. Top 3 Winners evaluated from Round 1 (100 Pts) + Round 2 Phase 2 (100 Pts) = 200 Total Points.',
       color: '#0284c7',
       bgGlow: 'rgba(56, 189, 248, 0.15)',
       borderColor: 'rgba(56, 189, 248, 0.4)'

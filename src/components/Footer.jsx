@@ -51,7 +51,7 @@ export const Footer = ({ onOpenAdmin, onOpenRegister }) => {
             <h4 style={{ fontSize: '0.95rem', color: '#0f2e22', marginBottom: '1rem', fontWeight: 700 }}>Navigation & Docs</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.88rem' }}>
               <a href="#overview" style={{ color: '#4b5563', textDecoration: 'none' }}>What's that?</a>
-              <a href="#details" style={{ color: '#4b5563', textDecoration: 'none' }}>2 Sprint Stages & 300-Pt Architecture</a>
+              <a href="#details" style={{ color: '#4b5563', textDecoration: 'none' }}>2 Sprint Stages & 200-Pt Final Rubric</a>
               <a href="#schedule" style={{ color: '#4b5563', textDecoration: 'none' }}>Master Timeline (09:30 AM – 02:30 PM)</a>
               <a href="#mentors" style={{ color: '#4b5563', textDecoration: 'none' }}>Mentors & Event Coordinators</a>
               <a href="#faq" style={{ color: '#4b5563', textDecoration: 'none' }}>FAQ & Guidelines</a>

@@ -16,7 +16,7 @@ export const FaqSection = () => {
     },
     {
       q: 'Is there any mid-event elimination after Round 1?',
-      a: 'No! DevSpark operates on a cumulative non-eliminatory model (300 Pts Total): Round 1 (LogicSprint - 100 Pts) + Round 2 (DevSprint - 200 Pts). In Round 2, Phase 1 (100 Pts) evaluates pre-built prototypes to shortlist the Top 5 teams, and Phase 2 (100 Pts) evaluates stage defense to decide the final podium standings.'
+      a: 'DevSpark operates on a structured 2-stage framework: Round 1 LogicSprint (100 Pts) + Round 2 DevSprint (Phase 1 & Phase 2). In Round 2, Phase 1 (100 Pts) evaluates pre-built prototypes specifically to shortlist the Top 5 finalist teams. The Top 5 finalists then deliver Phase 2 Stage Defense (100 Pts). The final Top 3 Winners are evaluated strictly from Round 1 (100 Pts) + Round 2 Phase 2 (100 Pts) = 200 Total Points.'
     },
     {
       q: 'Do teams build the project at home or on the event day?',

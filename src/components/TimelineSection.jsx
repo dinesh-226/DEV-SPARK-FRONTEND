@@ -15,7 +15,7 @@ export const TimelineSection = () => {
       time: '10:00 AM – 10:15 AM',
       phase: 'Briefing',
       title: 'Operational Briefing',
-      desc: 'Opening remarks by HOD (CSE), rulebook overview, and 300-pt scoring guidelines (Round 1: 100 Pts + Round 2: 200 Pts).',
+      desc: 'Opening remarks by HOD (CSE), rulebook overview, and 200-pt Top 3 winner scoring guidelines.',
       color: '#047857'
     },
     {
@@ -36,7 +36,7 @@ export const TimelineSection = () => {
       time: '11:15 AM – 12:00 PM',
       phase: 'Round 02 • Phase 1 (100 Pts)',
       title: 'Round 2: DevSprint Showcase (Phase 1 — 100 Pts)',
-      desc: 'All teams showcase their home-built working prototype before the evaluation jury (100 Pts) to qualify for the Top 5 shortlist.',
+      desc: 'All teams showcase their home-built working prototype before the evaluation jury (100 Pts). Scores in Phase 1 determine the Top 5 shortlist.',
       color: '#059669'
     },
     {
@@ -50,7 +50,7 @@ export const TimelineSection = () => {
       time: '12:15 PM – 01:15 PM',
       phase: 'Round 02 • Phase 2 (100 Pts)',
       title: 'Round 2: DevSprint Finalist Stage Defense (Phase 2 — 100 Pts)',
-      desc: 'In-depth stage demonstration and technical jury Q&A for the Top 5 finalist teams (100 Pts) to decide the final championship results.',
+      desc: 'Top 5 finalists deliver in-depth stage defense & technical jury Q&A (100 Pts). Combined with Round 1 (100 Pts) = 200 Total Points to evaluate the Top 3 Winners.',
       color: '#059669'
     },
     {
@@ -64,7 +64,7 @@ export const TimelineSection = () => {
       time: '02:00 PM – 02:30 PM',
       phase: 'Ceremony',
       title: 'Valedictory Ceremony & Accolades Distribution',
-      desc: 'Announcement of standout teams, Winner Trophies, and Official Certificates for all attendees.',
+      desc: 'Announcement of Top 3 Winners (evaluated out of 200 Pts: R1 + R2 Phase 2), Trophies, and Official Department Certificates.',
       color: '#047857'
     }
   ];

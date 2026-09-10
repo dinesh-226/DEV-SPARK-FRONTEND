@@ -8,27 +8,27 @@ import { TiltCard3D } from './TiltCard3D';
 export const DetailsRounds = () => {
   const [activeStageTab, setActiveStageTab] = useState(0);
 
-  // Score Calculator State (300 Points Model: R1 100 Pts + R2 Phase 1 100 Pts + R2 Phase 2 100 Pts)
+  // Score Calculator State (200 Points Final Winner Model: R1 100 Pts + R2 Phase 2 100 Pts, with Phase 1 100 Pts Qualifier)
   const [r1Correct, setR1Correct] = useState(32);
   const [r1Incorrect, setR1Incorrect] = useState(4);
   const [r2Phase1, setR2Phase1] = useState(85);
   const [r2Phase2, setR2Phase2] = useState(90);
 
   const r1Calculated = Math.max(0, Math.min(100, (r1Correct * 2.5) - (r1Incorrect * 0.5)));
-  const totalScore = Math.round((r1Calculated + r2Phase1 + r2Phase2) * 10) / 10;
-  const percentage = Math.round((totalScore / 300) * 100);
+  const finalWinnerScore = Math.round((r1Calculated + r2Phase2) * 10) / 10;
+  const percentage = Math.round((finalWinnerScore / 200) * 100);
 
-  // 2 Official Competition Stages (Round 1: 100 Pts + Round 2: 200 Pts = 300 Pts Total)
+  // 2 Official Competition Stages
   const stages = [
     {
       id: 'round1',
       tag: 'STAGE 01',
       title: 'Round 1: LogicSprint',
-      points: '100 Points',
+      points: '100 Points (Final Score)',
       time: '10:15 AM – 11:00 AM (45 Mins)',
       color: '#059669', // Emerald Green
       icon: Terminal,
-      desc: 'Synchronized digital aptitude and core tech assessment testing algorithmic logic, pseudocode tracing, data reasoning, and modern AI/Cloud fundamentals.',
+      desc: 'Synchronized digital aptitude and core tech assessment. Points contribute directly to the 200-point final Top 3 evaluation.',
       details: [
         '40 Objective Multiple-Choice Questions (MCQs)',
         '+2.5 Points for correct answer | -0.5 Points penalty for incorrect answer | 0.0 Unattempted',
@@ -41,17 +41,17 @@ export const DetailsRounds = () => {
       id: 'round2',
       tag: 'STAGE 02',
       title: 'Round 2: DevSprint (Phase 1 & Phase 2)',
-      points: '200 Points (100 + 100)',
+      points: 'Phase 1 (100 Pts Qualifier) • Phase 2 (100 Pts Final)',
       time: '11:15 AM – 01:15 PM (Phase 1 Demos & Phase 2 Finalist Defense)',
       color: '#047857', // Forest Green
       icon: Cpu,
-      desc: 'Round 2 features 2 distinct phases totaling 200 Points: Phase 1 (100 Pts) evaluates pre-built prototypes to shortlist the Top 5 teams, and Phase 2 (100 Pts) evaluates stage defense for final results.',
+      desc: 'Phase 1 (100 Pts) qualifies the Top 5 squads. The Top 5 then deliver Phase 2 Stage Defense (100 Pts) which is combined with Round 1 (100 Pts) to decide the Top 3 Winners (200 Total Points).',
       details: [
-        'Phase 1 Prototype Showcase (100 Points | 11:15 AM – 12:00 PM): All squads demonstrate their live running prototype before the jury to qualify for the Top 5 shortlist',
-        'Phase 2 Finalist Stage Defense (100 Points | 12:15 PM – 01:15 PM): Top 5 shortlisted teams deliver in-depth stage defense and technical jury Q&A for the final results',
-        'Build from Home: Develop full working code beforehand using ChatGPT, Gemini, Claude, Copilot, v0, Cursor',
-        'The "Zero-Black-Box" Rule: Every member must explain component logic, state handlers, and APIs without rote copy-pasting',
-        'Live Dynamic Execution: Prototypes must execute live with reactive inputs (0 pts for static Figma/wireframes)'
+        'Phase 1 Prototype Showcase (100 Points | 11:15 AM – 12:00 PM): All squads demonstrate their live running prototype before the jury; evaluated specifically to shortlist the Top 5 finalist teams',
+        'Phase 2 Finalist Stage Defense (100 Points | 12:15 PM – 01:15 PM): Top 5 shortlisted teams deliver in-depth stage defense and technical jury Q&A (100 Points)',
+        'Final Result (200 Points Total): The Top 3 Winners are evaluated strictly from Round 1 LogicSprint (100 Pts) + Round 2 Phase 2 Final Stage Defense (100 Pts) = 200 Total Points',
+        'Build from Home: Develop full working code beforehand using approved AI tools (ChatGPT, Gemini, Claude, Copilot, v0, Cursor)',
+        'The "Zero-Black-Box" Rule: Every member must explain component logic, state handlers, and APIs without copy-pasting'
       ]
     }
   ];
@@ -69,7 +69,7 @@ export const DetailsRounds = () => {
             2-Stage Sprint & Evaluation Matrix
           </h2>
           <p style={{ color: '#4b5563', maxWidth: '680px', fontSize: '0.98rem', lineHeight: 1.6 }}>
-            A cumulative 300-point framework comprising Round 1 LogicSprint (100 Pts) and Round 2 DevSprint (200 Pts: 100 Pts Phase 1 Top 5 Shortlist + 100 Pts Phase 2 Final Defense) governed by the official Department evaluation rubric.
+            A structured framework: Phase 1 (100 Pts) shortlists the Top 5 finalist teams, and the final Top 3 Winners are evaluated from Round 1 LogicSprint (100 Pts) + Round 2 Phase 2 Stage Defense (100 Pts) = 200 Total Points.
           </p>
         </div>
 
@@ -99,52 +99,55 @@ export const DetailsRounds = () => {
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
                   <span style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    padding: '0.25rem 0.75rem',
-                    borderRadius: '4px',
-                    fontSize: '0.72rem',
-                    fontWeight: 700,
-                    fontFamily: 'var(--font-mono)',
-                    background: `${stg.color}14`,
                     color: stg.color,
-                    border: `1px solid ${stg.color}35`
+                    fontSize: '0.78rem',
+                    fontWeight: 800,
+                    fontFamily: 'var(--font-mono)',
+                    letterSpacing: '0.04em'
                   }}>
                     {stg.tag}
                   </span>
-                  <span style={{ fontSize: '1rem', color: stg.color, fontWeight: 800, fontFamily: 'var(--font-mono)' }}>
+                  <span style={{
+                    background: '#ecfdf5',
+                    color: stg.color,
+                    padding: '0.25rem 0.65rem',
+                    borderRadius: '4px',
+                    fontSize: '0.75rem',
+                    fontWeight: 800,
+                    fontFamily: 'var(--font-mono)',
+                    border: `1px solid ${stg.color}35`
+                  }}>
                     {stg.points}
                   </span>
                 </div>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.85rem' }}>
                   <div style={{
-                    width: '42px',
-                    height: '42px',
+                    width: '38px',
+                    height: '38px',
                     borderRadius: '8px',
-                    background: `${stg.color}14`,
-                    border: `1px solid ${stg.color}35`,
+                    background: `${stg.color}15`,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: stg.color
                   }}>
-                    <Icon size={22} />
+                    <Icon size={20} />
                   </div>
-                  <h3 style={{ fontSize: '1.3rem', color: '#0f2e22', margin: 0, fontWeight: 800 }}>
+                  <h3 style={{ fontSize: '1.3rem', color: '#0f2e22', margin: 0, fontWeight: 700 }}>
                     {stg.title}
                   </h3>
                 </div>
 
-                <p style={{ fontSize: '0.9rem', color: '#4b5563', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+                <p style={{ fontSize: '0.88rem', color: '#4b5563', lineHeight: 1.6, marginBottom: '1.25rem' }}>
                   {stg.desc}
                 </p>
 
-                <div style={{ borderTop: '1px solid rgba(5, 150, 105, 0.08)', paddingTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {stg.details.map((d, i) => (
-                    <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.84rem', color: '#1f2937' }}>
-                      <CheckCircle2 size={15} color={stg.color} style={{ flexShrink: 0, marginTop: '0.18rem' }} />
-                      <span style={{ lineHeight: 1.45 }}>{d}</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                  {stg.details.map((item, dIdx) => (
+                    <div key={dIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.82rem', color: '#374151' }}>
+                      <CheckCircle2 size={15} color={stg.color} style={{ flexShrink: 0, marginTop: '2px' }} />
+                      <span>{item}</span>
                     </div>
                   ))}
                 </div>
@@ -235,7 +238,7 @@ export const DetailsRounds = () => {
         </div>
 
         {/* =========================================================================
-            300-PT SCORE SIMULATOR
+            200-PT FINAL WINNER SCORE SIMULATOR (TOP 3 EVALUATION)
            ========================================================================= */}
         <TiltCard3D
           maxTilt={5}
@@ -253,16 +256,17 @@ export const DetailsRounds = () => {
         >
           <div>
             <div className="crimson-pill" style={{ marginBottom: '0.5rem' }}>
-              SCORE SIMULATOR
+              SCORE SIMULATOR • TOP 3 EVALUATION
             </div>
             <h3 style={{ fontSize: '1.5rem', color: '#0f2e22', marginBottom: '0.5rem' }}>
-              Cumulative 300-Point Target
+              Final 200-Point Winner Target
             </h3>
             <p style={{ fontSize: '0.88rem', color: '#4b5563', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-              Round 1 (100 Pts) + Round 2 Phase 1 (100 Pts Top 5 Shortlist) + Round 2 Phase 2 (100 Pts Final Result).
+              Top 3 Winners are evaluated from <strong>Round 1 (100 Pts)</strong> + <strong>Round 2 Phase 2 (100 Pts)</strong> = <strong>200 Total Points</strong>. Phase 1 (100 Pts) serves as the qualifying round for the Top 5 shortlist.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              {/* Round 1 Slider */}
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: '#4b5563', marginBottom: '0.25rem' }}>
                   <span>Round 1: LogicSprint ({r1Correct} Correct, {r1Incorrect} Incorrect)</span>
@@ -278,9 +282,10 @@ export const DetailsRounds = () => {
                 />
               </div>
 
-              <div>
+              {/* Phase 1 Qualifier Info Slider */}
+              <div style={{ background: '#f4f8f6', padding: '0.85rem 1rem', borderRadius: '8px', border: '1px solid rgba(5, 150, 105, 0.15)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: '#4b5563', marginBottom: '0.25rem' }}>
-                  <span>Round 2: Phase 1 Demos (Top 5 Shortlist)</span>
+                  <span>Round 2: Phase 1 Demos (Top 5 Qualifier Benchmark)</span>
                   <span style={{ color: '#047857', fontWeight: 700 }}>{r2Phase1} / 100 Pts</span>
                 </div>
                 <input
@@ -291,11 +296,15 @@ export const DetailsRounds = () => {
                   onChange={(e) => setR2Phase1(Number(e.target.value))}
                   style={{ width: '100%', accentColor: '#047857' }}
                 />
+                <div style={{ fontSize: '0.72rem', color: '#059669', marginTop: '0.25rem', fontWeight: 600 }}>
+                  ✓ Qualifying Hurdle: Top 5 squads advance to Phase 2 Stage Defense
+                </div>
               </div>
 
+              {/* Phase 2 Stage Defense Slider */}
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: '#4b5563', marginBottom: '0.25rem' }}>
-                  <span>Round 2: Phase 2 Stage Defense (Final Result)</span>
+                  <span>Round 2: Phase 2 Finalist Stage Defense (Top 5 Teams)</span>
                   <span style={{ color: '#059669', fontWeight: 700 }}>{r2Phase2} / 100 Pts</span>
                 </div>
                 <input
@@ -313,17 +322,17 @@ export const DetailsRounds = () => {
           {/* Projection Card */}
           <div style={{
             background: '#f4f8f6',
-            border: '1px solid rgba(5, 150, 105, 0.35)',
+            border: '1.5px solid rgba(5, 150, 105, 0.35)',
             borderRadius: '10px',
             padding: '2rem',
             textAlign: 'center'
           }}>
             <div style={{ fontSize: '0.78rem', color: '#059669', fontFamily: 'var(--font-mono)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-              PROJECTED AGGREGATE SCORE
+              FINAL WINNER SCORE (R1 + R2 PHASE 2)
             </div>
             
             <div style={{ fontSize: '3.5rem', fontWeight: 800, color: '#0f2e22', lineHeight: 1.1, margin: '0.5rem 0' }}>
-              {totalScore} <span style={{ fontSize: '1.4rem', color: '#6b7280' }}>/ 300</span>
+              {finalWinnerScore} <span style={{ fontSize: '1.4rem', color: '#6b7280' }}>/ 200</span>
             </div>
 
             <div style={{ background: 'rgba(5, 150, 105, 0.12)', height: '6px', borderRadius: '3px', overflow: 'hidden', margin: '1.25rem 0' }}>
@@ -331,11 +340,11 @@ export const DetailsRounds = () => {
             </div>
 
             <div style={{ fontSize: '0.85rem', color: '#4b5563' }}>
-              {percentage}% of maximum cumulative score
+              {percentage}% of maximum championship score (200 Pts)
             </div>
 
             <div style={{ marginTop: '1.25rem', padding: '0.75rem', background: '#ecfdf5', borderRadius: '6px', border: '1px solid rgba(5, 150, 105, 0.25)', fontSize: '0.82rem', color: '#059669', fontWeight: 700 }}>
-              {totalScore >= 255 ? '🏆 Top Standing (Podium Contender)' : totalScore >= 200 ? '🎖️ High Merit Tier (Certificate of Excellence)' : '🚀 Active Sprint Builder'}
+              {finalWinnerScore >= 175 ? '🏆 Top 3 Podium Winner (1st / 2nd / 3rd Contender)' : finalWinnerScore >= 140 ? '🎖️ Top 5 Finalist Distinction' : '🚀 Active Sprint Builder'}
             </div>
           </div>
         </TiltCard3D>

@@ -177,7 +177,7 @@ export const IsometricHeroArt = () => {
             />
             <g transform="translate(473, 230) rotate(26)">
               <text x="0" y="0" fill="#ffffff" fontSize="7.5" fontWeight="800" fontFamily="var(--font-mono)">
-                500 PTS
+                200 PTS
               </text>
             </g>
 

@@ -75,7 +75,7 @@ export const Hero = ({ onRegisterClick }) => {
               maxWidth: '475px',
               marginBottom: '1.75rem'
             }}>
-              Join us to discover new ways to build and innovate. A multidisciplinary 300-point sprint: build your AI prototype beforehand from home, qualify for the Top 5 shortlist in Phase 1 (100 Pts), and defend your live project in Phase 2 (100 Pts) before our expert jury at ABIET Pathankot.
+              Join us to discover new ways to build and innovate. A multidisciplinary sprint: build your AI prototype beforehand from home, qualify for the Top 5 shortlist in Phase 1 (100 Pts), and compete for the Top 3 Winners based on Round 1 (100 Pts) + Round 2 Phase 2 Stage Defense (100 Pts) = 200 Final Points.
             </p>
 
             {/* CTA & Official Document Download Buttons */}
@@ -230,10 +230,10 @@ export const Hero = ({ onRegisterClick }) => {
             </div>
             <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f2e22', lineHeight: 1.3 }}>
               2 Sprint Stages <br />
-              300-Pt Cumulative
+              200-Pt Final Evaluation
             </div>
             <div style={{ fontSize: '0.85rem', color: '#4b5563', marginTop: '0.25rem' }}>
-              Round 1 (100 Pts) + Round 2 (200 Pts: 100 + 100)
+              R1 (100 Pts) + R2 Phase 2 (100 Pts) = Top 3 Winners
             </div>
           </div>
 
