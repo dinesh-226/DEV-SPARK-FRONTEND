@@ -44,11 +44,11 @@ export const DetailsRounds = () => {
       time: '11:15 AM – 01:15 PM (Phase 1 Demos & Phase 2 Finalist Defense)',
       color: '#047857', // Forest Green
       icon: Cpu,
-      desc: 'Build your AI prototype solution beforehand from home based on the problem tracks. On event day, showcase and defend your live working prototype across Phase 1 demos and Phase 2 Top 5–7 finalist defense.',
+      desc: 'Build your AI prototype solution beforehand from home based on the problem tracks. On event day, showcase and defend your live working prototype across Phase 1 demos and Phase 2 Top 5 finalist defense.',
       details: [
         'Build from Home: Develop full working code beforehand using ChatGPT, Gemini, Claude, Copilot, v0, Cursor',
         'Phase 1 Demos (11:15 AM – 12:00 PM): All squads demonstrate their live running prototype before the jury',
-        'Phase 2 Finalist Defense (12:15 PM – 01:15 PM): Top 5 to 7 shortlisted teams deliver in-depth stage defense and jury Q&A',
+        'Phase 2 Finalist Defense (12:15 PM – 01:15 PM): Top 5 shortlisted teams deliver in-depth stage defense and jury Q&A',
         'The "Zero-Black-Box" Rule: Every member must explain component logic, state handlers, and APIs without rote copy-pasting',
         'Live Dynamic Execution: Prototypes must execute live with reactive inputs (0 pts for static Figma/wireframes)'
       ]

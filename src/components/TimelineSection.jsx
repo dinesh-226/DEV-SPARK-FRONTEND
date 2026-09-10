@@ -42,15 +42,15 @@ export const TimelineSection = () => {
     {
       time: '12:00 PM – 12:15 PM',
       phase: 'Shortlist',
-      title: '15-Min Break & Top 5–7 Finalists Announcement',
-      desc: 'Jury aggregates preliminary scores and announces the Top 5 to 7 finalist squads.',
+      title: '15-Min Break & Top 5 Finalists Announcement',
+      desc: 'Jury aggregates preliminary scores and announces the Top 5 finalist squads.',
       color: '#047857'
     },
     {
       time: '12:15 PM – 01:15 PM',
       phase: 'Round 02 • Phase 2',
       title: 'Round 2: DevSprint Finalist Stage Defense',
-      desc: 'In-depth stage demonstration and technical jury Q&A for the Top 5–7 finalist teams.',
+      desc: 'In-depth stage demonstration and technical jury Q&A for the Top 5 finalist teams.',
       color: '#059669'
     },
     {
